@@ -1,7 +1,51 @@
-import React from 'react'
-import { LinkButton, LinkButtonSecond, LinkButtonTertiaire } from "../../../../components/common/Buttons";
+import axios from 'axios'
+import React, { useState } from 'react'
+import { BASE_URL } from '../../../../constant/url'
+import { LinkButton } from "../../../../components/common/Buttons";
 import Avatar from "../../../../assets/images/Avatar.png";
+import { useNavigate } from "react-router-dom";
+import  toast  from 'react-hot-toast'
 function Navbar() {
+  const [project, setProjectname] = useState("");
+    
+  let navigate = useNavigate();
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const ProjectHandler = async (e) => {
+      e.preventDefault();
+
+      const config = {
+          header: {
+              "Content-Type": "application/json",
+          },
+      };
+
+      try {
+          const { data } = await axios.post(
+              `${BASE_URL}/api/readProject`,
+              { project },
+              config
+          );
+
+       setSuccess(data.data);
+       navigate("/cloud");
+
+             
+
+
+          history.push("/");
+      } catch (error) {
+          setError(error.response.data.error);
+          setTimeout(() => {
+              setError("");
+              toast.error("action non validé")
+          }, 5000);
+      }
+  };
+
+
+
   return (
     <div >    
       <div className="bg-slate-900 h-16   flex flex-row">
@@ -9,9 +53,9 @@ function Navbar() {
       <h1 className="text-3xl  text-white ml-3 py-3">WebG.</h1>
       <div className='ml-60 pl-60'></div>
       <div className=" ml-60 pl-10 mt-3  ">
-
-        <LinkButton page="/cloud">Mes projects</LinkButton>
-
+<form onSubmit={ProjectHandler}>
+        <button type='submit' className='text-white'>Mes projects</button>
+ </form>
       </div>
       <div className=" ml-1 pl-1 mt-3  ">
 

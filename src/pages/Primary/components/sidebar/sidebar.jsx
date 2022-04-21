@@ -15,7 +15,7 @@ const SideBar = () => {
           <div className="top_section">
             
                 <h1
-                 className="text-center mt-5 text-2xl">
+                 className="text-center font-bold mt-5 text-2xl">
                   Template
                 </h1>
               

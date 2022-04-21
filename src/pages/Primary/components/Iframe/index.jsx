@@ -66,18 +66,25 @@ function dragLeave(e) {
     console.log('dragLeave...')
 }
 
-
-  
   return (
-    <div>
+    <div className='overflow-y-auto h-96'>
         <h1 id="component-text" ref={ref}  className="font-bold">Liste des components</h1>
         <ul id="components_list" onLoad={loadComponents}  className="my-4 grid grid-cols-1 gap-8">
-       
+       <div
+           id='item'
+           onDrag={dragStart}
+           onDragEnter={dragEnter}
+           onDragOver={dragOver}
+           onDragLeave={dragLeave}
+           draggable="true"
+       >
        <iframe
           src="http://localhost:5000/navbar"
           width="500%"
-          height="150%"
+          height="50%"
         ></iframe>
+       </div>
+      
         </ul>
         <ul id="components_list" onLoad={loadComponents}  className="mt-2">
        
@@ -93,7 +100,28 @@ function dragLeave(e) {
           src="http://localhost:5000/footer1"
           width="500%"
           height="100%"
-          className="hidden"
+         
+        ></iframe>
+        </ul>
+        <ul id="components_list" onLoad={loadComponents}  className="mt-2">
+       <iframe
+          src="http://localhost:5000/footer"
+          width="500%"
+          height="100%"
+        ></iframe>
+        </ul>
+        <ul id="components_list" onLoad={loadComponents}  className="mt-2">
+       <iframe
+          src="http://localhost:5000/article"
+          width="500%"
+          height="500%"
+        ></iframe>
+        </ul>
+        <ul id="components_list" onLoad={loadComponents}  className="mt-2">
+       <iframe
+          src="http://localhost:5000/footer"
+          width="500%"
+          height="100%"
         ></iframe>
         </ul>
     </div>

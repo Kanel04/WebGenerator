@@ -80,7 +80,7 @@ className='w-24 h-8 bg-slate-500'
             <label  id="image" className='text-xl '>Image:</label>
             
             <div className='mt-5'>
-            <input type="file" multiple accept='image/*' onChange={onImageChange} className='mt-2' id='fileInputFile' />
+            <input type="file" multiple accept='image/*' onChange={onImageChange} className='mt-2  cursor-pointer' id='fileInputFile' />
             {imageURLs.map(imageSrc => <img src={imageSrc} draggable='true'/> )}
             </div>
             

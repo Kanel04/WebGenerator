@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import {BASE_URL} from '../../constant/url';
 import { motion } from 'framer-motion';
-import { GrTemplate } from "react-icons/gr";
+import { BiPencil } from "react-icons/bi";
 import { LinkButton, LinkButtonSecond, LinkButtonTertiaire } from "../../components/common/Buttons";
 import Avatar from "../../assets/images/Avatar.png";
 import  toast  from 'react-hot-toast';
@@ -95,7 +95,7 @@ const profilHandler = async (e) => {
     id='p'
     className='text-white'
     >{firstname}</p>
-      <GrTemplate id='Icon_id' onClick={showInput}  className=" ml-5 cursor-pointer"></GrTemplate>
+      <BiPencil id='Icon_id' onClick={showInput}  className=" ml-5 cursor-pointer"></BiPencil>
         <input type="text" id='Input_id' className='hidden ml-3 h-7 mt-2 px-3 rounded-xl'/>
     </div>
         <label  className='text-white mt-5'>Prénom:</label>
@@ -104,7 +104,7 @@ const profilHandler = async (e) => {
      id='p2'
      className='text-white'
      >{lastname}</p>
-      <GrTemplate id='Icon_id2' onClick={showInput} className="  ml-5 cursor-pointer"></GrTemplate>
+      <BiPencil id='Icon_id2' onClick={showInput} className="  ml-5 cursor-pointer"></BiPencil>
         <input type="text" id='Input_id2' className='hidden ml-3 h-7 mt-2 px-3 rounded-xl'/>
     </div>
         <label  className='text-white mt-5'>Email:</label>
@@ -113,7 +113,7 @@ const profilHandler = async (e) => {
     id='p3' 
     className='text-white'
     >{email}</p>
-      <GrTemplate id='Icon_id3' onClick={showInput}  className=" ml-5 cursor-pointer"></GrTemplate>
+      <BiPencil id='Icon_id3' onClick={showInput}  className=" ml-5 cursor-pointer"></BiPencil>
         <input type="text" id='Input_id3' className='hidden ml-3 h-7 mt-2 px-3 rounded-xl'/>
     </div>
         <label  className='text-white mt-5'>Mot de passe:</label>
@@ -122,7 +122,7 @@ const profilHandler = async (e) => {
       id='p4' 
       className='text-white'
       >{password}</p>
-      <GrTemplate id='Icon_id4' onClick={showInput} className=" ml-5 cursor-pointer"></GrTemplate>
+      <BiPencil id='Icon_id4' onClick={showInput} className=" ml-5 cursor-pointer"></BiPencil>
         <input type="password" id='Input_id4' className='hidden ml-3 h-7 mt-2 px-3 rounded-xl'/>
     </div>
         </div>
