@@ -9,6 +9,7 @@ import PasswordForgetPage from "./pages/PasswordForget";
 import ConfirmPasswordPage from "./pages/PasswordForget/ConfirmPassword";
 import CreateProject from "./pages/Project";
 import Primary from "./pages/Primary";
+import Profile from "./pages/Profile"
 
 export const App = () => {
   return (
@@ -23,6 +24,7 @@ export const App = () => {
         <Route path="/confirmpassword" element={<ConfirmPasswordPage />}></Route>
         <Route path="/createproject" element={<CreateProject />}></Route>
         <Route path="/primary" element={<Primary />}></Route>
+        <Route path="/profile" element={<Profile />}></Route>
       </Routes>
     </Router>
   );
