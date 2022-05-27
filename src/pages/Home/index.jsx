@@ -51,7 +51,7 @@ export const HomePage = () => {
             <h1 className=" text-2xl py-5 px-8 mx-9 text-center">Construire votre site web étape par étape</h1>
             <img src={WebPhoto2} className=" items-center p-5 h-60 " alt="WebPhoto2" />
             <div className="py-5 px-32 pb-8">
-              <LinkButtonTertiaire page="/primary"  >Commencer</LinkButtonTertiaire>
+              <LinkButtonTertiaire page="/"  >Commencer</LinkButtonTertiaire>
             </div>
           </div>
         </div>

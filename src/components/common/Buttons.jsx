@@ -5,7 +5,7 @@ export const Button = (props) => {
 }
 
 export const Input = (props) => {
-    return <input {...props} className="border shadow-inner shadow-2xl mt-5  ml-8 w-96 h-10 text-center rounded-full" />
+    return <input {...props} className="border  shadow-2xl mt-5  ml-8 w-96 h-10 text-center rounded-full" />
 }
 
 export const LinkButton = (props) => {
