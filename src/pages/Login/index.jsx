@@ -2,16 +2,20 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { BASE_URL } from '../../constant/url'
 import { Button, Input, LinkButton } from '../../components/common/Buttons'
+import {useNavigate} from "react-router-dom";
 
 
 const LoginPage = ({ history }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    
+    let navigate = useNavigate();
+    
+   
 
     useEffect(() => {
-        if (localStorage.getItem("authToken")) {
-            
+        if (localStorage.getItem("authToken")) { 
             setEmail("");
             setPassword("");
         }
@@ -37,7 +41,7 @@ const LoginPage = ({ history }) => {
             );
 
             localStorage.setItem("authToken", data.token);
-            history.push("/");
+            navigate("/createproject");
         } catch (error) {
             setError(error.response.data.error);
             setTimeout(() => {
