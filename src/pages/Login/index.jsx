@@ -45,7 +45,7 @@ const LoginPage = ({ history }) => {
         } catch (error) {
             setError(error.response.data.error);
             setTimeout(() => {
-                setError("");
+                setError("Mot de Passe Incorrect ou Email Incorrect ");
             }, 5000);
         }
     };
@@ -61,7 +61,7 @@ const LoginPage = ({ history }) => {
             <h1 className="text-white font-sans text-3xl">Bienvenue dans WebGenerator</h1>
             <h2 className="text-white font-sans text-xl mt-2">Remplissez pour votre  authantification</h2>
             <h1 className="text-white font-sans text-3xl mt-8">Connexion</h1>
-            {error && <span className="text-white text-xl">{error}</span>}
+            {error && <span className="text-white text-xl bg-red-700 h-9 w-96 mt-5 px-2 ">{error}</span>}
             </div>
             
                     <Input
