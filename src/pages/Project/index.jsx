@@ -7,7 +7,8 @@ import Avatar from '../../assets/images/Avatar.png'
 const ProjectPage = () => {
     const [project, setproject] = useState("")
     const createProject = () => {
-        axios.post(`http://localhost:5000/api/createProject`, { project }).then((data) => console.log(data)).catch(err => console.error(err))
+        axios.post(`http://localhost:5000/api/createProject`, 
+        { project }).then((data) => console.log(data)).catch(err => console.error(err))
     }
 
     return (

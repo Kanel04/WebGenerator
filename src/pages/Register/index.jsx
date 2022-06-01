@@ -76,7 +76,7 @@ const RegisterPage = ({history}) => {
             <div className="mb-2   mt-5 flex flex-col items-center justify-center">
                 <h1 className="text-white font-sans text-3xl">S'inscrire</h1>
                 <h2 className="text-white font-sans text-xl mt-2">Remplissez pour votre information</h2>
-                {error && <span className="text-white ">{error}</span>}
+                        {error && <span className="text-white  bg-red-700 h-9 rounded-xl w-96 mt-5 px-2 ">{error}</span>}
             </div>
              
             <Input 
