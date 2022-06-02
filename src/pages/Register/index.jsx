@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import {BASE_URL} from '../../constant/url'
 import { Button , Input , LinkButton} from '../../components/common/Buttons'
-import Avatar from '../../assets/images/Avatar.png';
+import { useNavigate } from "react-router-dom";
 const RegisterPage = ({history}) => {
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
@@ -10,6 +10,8 @@ const RegisterPage = ({history}) => {
     const [password, setPassword] = useState("");
     const [confirmpassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
+
+    let navigate = useNavigate();
 
     const registerHandler = async (e) => {
         e.preventDefault();
@@ -50,6 +52,7 @@ const RegisterPage = ({history}) => {
                 setEmail("");
                 setPassword("");
                 setConfirmPassword("");
+                navigate("/createproject");
             }
 
             history.push("/");
@@ -76,7 +79,7 @@ const RegisterPage = ({history}) => {
             <div className="mb-2   mt-5 flex flex-col items-center justify-center">
                 <h1 className="text-white font-sans text-3xl">S'inscrire</h1>
                 <h2 className="text-white font-sans text-xl mt-2">Remplissez pour votre information</h2>
-                        {error && <span className="text-white  bg-red-700 h-9 rounded-xl w-96 mt-5 px-2 ">{error}</span>}
+                        {error && <span className="text-white  bg-red-700 h-12 rounded-xl w-96 mt-5 px-2 ">{error}</span>}
             </div>
              
             <Input 
