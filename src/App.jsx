@@ -10,6 +10,7 @@ import ConfirmPasswordPage from "./pages/PasswordForget/ConfirmPassword";
 import CreateProject from "./pages/Project";
 import Primary from "./pages/Primary";
 import Profile from "./pages/Profile"
+import Cloud from "./pages/Cloud"
 
 export const App = () => {
   return (
@@ -25,6 +26,7 @@ export const App = () => {
         <Route path="/createproject" element={<CreateProject />}></Route>
         <Route path="/primary" element={<Primary />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/cloud" element={<Cloud />}></Route>
       </Routes>
     </Router>
   );
