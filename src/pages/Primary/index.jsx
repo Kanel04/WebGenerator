@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { LinkButton, LinkButtonSecond, LinkButtonTertiaire } from "../../components/common/Buttons";
 import React, { useState } from 'react'
+import Draggable from "react-draggable";
 import Board from '../../components/Boards'
 import Card from '../../components/Boards'
 import Avatar from "../../assets/images/Avatar.png";
@@ -63,7 +64,9 @@ function changeColor(){
                                     <option value="footer">footer</option>
                                 </select>
                             </div>
-
+                            <Draggable>
+                                <div>I can now be moved around!</div>
+                            </Draggable>
                             <Board id="board-1" className="mt-16">
                                 <Card id="card-1" className="text-white ml-14 bg-black w-24 cursor-pointer mt-5" >
                                     Card One
