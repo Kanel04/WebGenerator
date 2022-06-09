@@ -30,10 +30,16 @@ function CloudPage() {
                   </div>
               </LinkButton>
           </div>
-          <div className='bg-gray-700  h-screen w-screen  flex flex-row ' >
+          <div className='bg-gray-700 overflow-x-scroll h-screen  w-screen  flex flex-row ' >
     <CardProject></CardProject>
     <CardProject></CardProject>
     <CardProject></CardProject>
+              <CardProject></CardProject>
+              <CardProject></CardProject>
+              <CardProject></CardProject>
+              <CardProject></CardProject>
+              <CardProject></CardProject>
+              <CardProject></CardProject>
 
 
           </div>
