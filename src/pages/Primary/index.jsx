@@ -64,37 +64,38 @@ function changeColor(){
                                     <option value="footer">footer</option>
                                 </select>
                             </div>
-                            <Draggable>
-                                <div>I can now be moved around!</div>
-                            </Draggable>
-                            <Board id="board-1" className="mt-16">
-                                <Card id="card-1" className="text-white ml-14 bg-black w-24 cursor-pointer mt-5" >
-                                    Card One
-                                </Card>
-                                <Card id="card-1" className="text-white ml-14 bg-black w-24 cursor-pointer mt-5" >
-                                    Card One
-                                </Card>
-                                <Card id="card-1" className="text-white ml-14 bg-black w-24 cursor-pointer mt-5" >
-                                    Card One
-                                </Card>
-                                <Card id="card-1" className="text-white ml-14 bg-black w-24 cursor-pointer mt-5" >
-                                    Card One
-                                </Card>
-                            </Board></div>
+                            <div className='flex flex-col'>
+                                <Draggable>
+                                    <div className='bg-black text-white w-28 mt-5 ml-5 '>
+                                        card
+                                    </div>
+                                </Draggable>
+                                <Draggable>
+                                    <div className='bg-black text-white w-28 mt-5 ml-5 '>
+                                        card
+                                    </div>
+                                </Draggable>
+                                <Draggable>
+                                    <div className='bg-black text-white w-28 mt-5 ml-5 '>
+                                        card
+                                    </div>
+                                </Draggable>
+                            </div>
+                            
+                            </div>
                         <div className='bg-gray-700 w-28'></div>
-                        <Board id="board-2" className=" bg-white  mt-36  w-screen items-center h-screen">
-                            <Card id="card-2" className="bg-blue-200 w-24 cursor-pointer"  >
-                                <p>Card two</p>
-                            </Card>
-                        </Board>
+                        <div id="board-2" className=" bg-white  mt-36  w-screen items-center h-screen">
+                            
+                        </div>
                         <div className='bg-gray-700 w-28'></div>
                         <div className='mt-28 bg-white rounded-l-lg  h-screen  w-96'>
                             <h1 className='text-2xl text-center mt-4'>Outils</h1>
                             <h1 className='text-xl ml-5 mt-5'>Boutton:</h1>
-                            <Board id='tols' className='ml-5'>
-                                <Card className="w-24 mt-2 ml-2">
-                                    <button className='bg-slate-500 w-24 h-8  text-white' >boutton</button>
-                                </Card>
+                            <div id='tols' className='ml-5'>
+                                
+                                <Draggable>
+                                    <button className='bg-slate-500 w-24 h-8  text-white' >boutton</button> 
+                                </Draggable>
                                 <div className='mt-5 pr-5'>
                                     <h1 className='text-xl'>Texte:</h1>
                                     <input type="text" placeholder='texte ici' className=' mt-2 w-60 h-9 px-5 rounded-full' />
@@ -114,7 +115,7 @@ function changeColor(){
                                     </div>
                                 </div>
                                 <button className='mt-2 bg-slate-900 w-40 h-10 text-white rounded-xl ml-15'>Ajouter</button>
-                            </Board>
+                            </div>
 
                         </div>
 
