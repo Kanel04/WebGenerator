@@ -53,7 +53,12 @@ const LoginPage = ({ history }) => {
 
     return (
        
-<>
+<motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+
+>
             <div className='bg-gray-300'></div>
             <div className=' bg-gray-300 w-full h-sreen top-0 left-0'>
                 <form onSubmit={loginHandler}>
@@ -115,7 +120,7 @@ const LoginPage = ({ history }) => {
         </div>
                 </form>
         </div>
-        </>
+        </motion.div>
           )
 }
 

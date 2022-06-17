@@ -13,7 +13,12 @@ const ProjectPage = () => {
     }
 
     return (
-        <div className='flex-col'>
+        <motion.div className='flex-col'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+
+        >
         <div className=' flex-col '>
                 <motion.div className="bg-slate-900 h-16   flex flex-row"
                     initial={{ y: -20 }}
@@ -64,7 +69,7 @@ const ProjectPage = () => {
                         </div>
                 </div>
         </div>
-              </div>
+              </motion.div>
     )
 }
 

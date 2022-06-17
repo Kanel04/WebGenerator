@@ -37,7 +37,12 @@ const PasswordForgetPage = () => {
 
   return (
 
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+
+    >
       <div className=' bg-gray-300 w-full h-screen top-0 left-0'>
          <form onSubmit={forgotPasswordHandler}>
         <div className=' shadow-lg max-w-lg mx-auto  w-5/6 h-screen   bg-slate-900 flex flex-col items-center justify-center '>
@@ -83,7 +88,7 @@ const PasswordForgetPage = () => {
         </div>
         </form>
       </div>
-    </>
+    </motion.div>
   )
 }
 

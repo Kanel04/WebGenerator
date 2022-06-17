@@ -76,7 +76,12 @@ const RegisterPage = ({history}) => {
 
 
     return (
-        <div className=' bg-gray-300 w-full h-screen top-0 left-0'>
+        <motion.div className=' bg-gray-300 w-full h-screen top-0 left-0'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+
+        >
             <form onSubmit={registerHandler} >
         <div className=' shadow-2xl max-w-lg mx-auto  w-5/6 h-screen  bg-slate-900 flex flex-col items-center justify-center '>
             <div className="mb-2   mt-5 flex flex-col items-center justify-center">
@@ -135,7 +140,7 @@ const RegisterPage = ({history}) => {
             </motion.div>
         </div>
             </form>
-        </div>
+        </motion.div>
     )
 }
 

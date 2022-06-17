@@ -3,6 +3,7 @@ import { LinkButton, LinkButtonSecond, LinkButtonTertiaire } from "../../compone
 
 import React, { useState } from 'react'
 import Draggable from "react-draggable";
+import { motion } from 'framer-motion';
 import Board from '../../components/Boards'
 import Card from '../../components/Boards'
 import Avatar from "../../assets/images/Avatar.png";
@@ -26,7 +27,12 @@ const PrimaryPage = () => {
 
     return (
 
-        <>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+
+        >
 
             <div className="">
                 <div className='bg-gray-700 h-screen flex flex-col'>
@@ -137,7 +143,7 @@ const PrimaryPage = () => {
 
                 </div>
             </div>
-        </>
+        </motion.div>
     )
 }
 

@@ -1,9 +1,15 @@
 import React from 'react'
+import { motion } from 'framer-motion';
 import { LinkButton, LinkButtonSecond, LinkButtonTertiaire } from "../../components/common/Buttons";
 import Avatar from "../../assets/images/Avatar.png";
 function profile() {
   return (
-    <div className='bg-gray-300 w-full h-screen top-0 left-0 '>
+    <motion.div className='bg-gray-300 w-full h-screen top-0 left-0 '
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+
+    >
       <div className='bg-gray-300 text-gray-300'>p</div>
       <div className='bg-slate-900 flex flex-col mt-9 w-96 h-96 ml-96 px-9 rounded-2xl'>
         <h1 className="text-3xl text-white text-center mt-5">Profile</h1>
@@ -17,7 +23,7 @@ function profile() {
           <LinkButton page="/primary"> <p className='text-black ml-3 text-lg'>Retour</p></LinkButton>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

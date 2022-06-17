@@ -26,7 +26,12 @@ const containerVariants = {
 export const HomePage = () => {
 
   return (
-    <>
+    <motion.div
+    initial={{opacity:0}}
+    animate={{opacity:1}}
+    exit={{opacity:0}}
+
+    >
       <motion.div className="bg-slate-900 h-16 w-screen  content-start fixed flex flex-row"
         initial={{ y: -10 }}
         animate={{ y: 0 }}
@@ -194,6 +199,6 @@ export const HomePage = () => {
         </div>
       </div>
 
-    </>
+    </motion.div>
   );
 };

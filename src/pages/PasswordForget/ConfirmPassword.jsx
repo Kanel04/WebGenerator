@@ -13,7 +13,12 @@ const ConfirmPasswordPage = () => {
     return (
 
 
-        <div className=' bg-gray-300 w-full h-screen top-0 left-0'>
+        <motion.div className=' bg-gray-300 w-full h-screen top-0 left-0'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+
+        >
             <div className=' shadow-lg max-w-lg mx-auto  w-5/6 h-screen   bg-slate-900 flex flex-col items-center justify-center '>
                 <div className="mb-16 flex flex-col items-center justify-center">
                     <motion.h1 className="text-white font-sans text-3xl"
@@ -47,7 +52,7 @@ const ConfirmPasswordPage = () => {
 </motion.div>
                
             </div>
-        </div>
+        </motion.div>
     )
 }
 

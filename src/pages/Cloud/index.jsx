@@ -1,11 +1,17 @@
 import React from 'react'
+import { motion } from 'framer-motion';
 import { LinkButton, LinkButtonSecond, LinkButtonTertiaire } from "../../components/common/Buttons";
 import { CardProject } from "../../components/ProjectCard";
 import Avatar from "../../assets/images/Avatar.png";
 
 function CloudPage() {
   return (
-    <div className='flex flex-col'>
+    <motion.div className='flex flex-col'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+
+    >
           <div className="bg-slate-900 h-16 w-screen fixed flex flex-row">
 
               <h1 className="text-3xl  text-white ml-3 py-3">WebG.</h1>
@@ -43,7 +49,7 @@ function CloudPage() {
 
 
           </div>
-    </div>
+    </motion.div>
   )
 }
 
