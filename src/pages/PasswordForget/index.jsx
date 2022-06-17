@@ -2,6 +2,8 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { Button, Input, LinkButton } from '../../components/common/Buttons'
 import { BASE_URL } from '../../constant/url'
+import { motion } from 'framer-motion';
+
 const PasswordForgetPage = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
@@ -40,9 +42,21 @@ const PasswordForgetPage = () => {
          <form onSubmit={forgotPasswordHandler}>
         <div className=' shadow-lg max-w-lg mx-auto  w-5/6 h-screen   bg-slate-900 flex flex-col items-center justify-center '>
           <div className="mb-16 flex flex-col items-center justify-center">
-            <h1 className="text-white font-sans text-3xl">Mot de passe Oublier</h1>
-            <h2 className="text-white font-sans text-2xl mt-2">Entrer Votre Email</h2>
-            <h1 className="text-white font-sans text-xl mt-2">Pour trouver Votre Compte</h1>
+            <motion.h1 className="text-white font-sans text-3xl"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.5, duration: 1.5 }}
+            >Mot de passe Oublier</motion.h1>
+            <motion.h2 className="text-white font-sans text-2xl mt-2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2.5, duration: 1.5 }}
+            >Entrer Votre Email</motion.h2>
+            <motion.h1 className="text-white font-sans text-xl mt-2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 3.5, duration: 1.5 }}
+            >Pour trouver Votre Compte</motion.h1>
               {error && <span className="text-white  bg-red-700 h-12 rounded-xl w-96 mt-5 px-2">{error}</span>}
               {success && <span className="text-white  bg-green-700 h-12 rounded-xl w-96 mt-5 px-2">{success}</span>}
           </div>
@@ -55,8 +69,17 @@ const PasswordForgetPage = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
           />
-          <LinkButton page="/login">Cliquez ici si Vous voulez retourner.</LinkButton>
-            <Button type="submit" >Envoyer l' Email</Button>
+          <motion.div
+              whileHover={{ scale: 1.1 }}
+          >
+              <LinkButton page="/login">Cliquez ici si Vous voulez retourner.</LinkButton>
+          </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+            >
+              <Button type="submit" >Envoyer l' Email</Button>
+            </motion.div>
+            
         </div>
         </form>
       </div>

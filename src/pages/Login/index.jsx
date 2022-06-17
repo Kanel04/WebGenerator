@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { BASE_URL } from '../../constant/url'
 import { Button, Input, LinkButton } from '../../components/common/Buttons'
 import {useNavigate} from "react-router-dom";
+import { motion } from 'framer-motion';
 
 
 const LoginPage = ({ history }) => {
@@ -58,9 +59,21 @@ const LoginPage = ({ history }) => {
                 <form onSubmit={loginHandler}>
         <div className=' shadow-lg max-w-lg mx-auto  w-5/6 h-screen   bg-slate-900 flex flex-col items-center justify-center '>
             <div className="mb-16 flex flex-col items-center justify-center">
-            <h1 className="text-white font-sans text-3xl">Bienvenue dans WebGenerator</h1>
-            <h2 className="text-white font-sans text-xl mt-2">Remplissez pour votre  authantification</h2>
-            <h1 className="text-white font-sans text-3xl mt-8">Connexion</h1>
+            <motion.h1 className="text-white font-sans text-3xl"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 1.5, duration: 1.5 }}
+            >Bienvenue dans WebGenerator</motion.h1>
+            <motion.h2 className="text-white font-sans text-xl mt-2"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 2.5, duration: 1.5 }}
+            >Remplissez pour votre  authantification</motion.h2>
+            <motion.h1 className="text-white font-sans text-3xl mt-8"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 3.5, duration: 1.5 }}
+            >Connexion</motion.h1>
             {error && <span className="text-white text-xl bg-red-700 rounded-xl h-9 w-96 mt-5 px-2 ">{error}</span>}
             </div>
             
@@ -82,10 +95,23 @@ const LoginPage = ({ history }) => {
                         value={password}
                         tabIndex={2}
             />
-                   
-            <LinkButton page="/register">Cliquez ici si vous n'avez pas de compte.</LinkButton>
-                    <LinkButton page="/passwordforget">Mot de passe Oublier?</LinkButton>
-                        <Button type="submit" >Se connecter</Button>
+                   <motion.div
+                            whileHover={{ scale: 1.1 }}
+                   >
+                            <LinkButton page="/register">Cliquez ici si vous n'avez pas de compte.</LinkButton>
+                   </motion.div>
+          <motion.div
+                            whileHover={{ scale: 1.1 }}
+          >
+                            <LinkButton page="/passwordforget">Mot de passe Oublier?</LinkButton>
+          </motion.div>
+            
+                    <motion.div
+                            whileHover={{ scale: 1.1 }}
+                    >
+                            <Button type="submit" >Se connecter</Button>
+                    </motion.div>
+                        
         </div>
                 </form>
         </div>

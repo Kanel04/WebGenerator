@@ -1,10 +1,12 @@
 import axios from 'axios'
 import { LinkButton, LinkButtonSecond, LinkButtonTertiaire } from "../../components/common/Buttons";
+
 import React, { useState } from 'react'
 import Draggable from "react-draggable";
 import Board from '../../components/Boards'
 import Card from '../../components/Boards'
 import Avatar from "../../assets/images/Avatar.png";
+import DropZoneComponent from '../../components/DropZoneComponent';
 const PrimaryPage = () => {
     const [project, setproject] = useState("")
     const PrimaryProject = () => {
@@ -16,8 +18,12 @@ const PrimaryPage = () => {
     }
     function importFile() {
         let file = document.getElementById("fileInputFile").value;
-        document.getElementById("fileImageFile").value = file;
+        let image = document.getElementById("fileImageFile").value;
+         
     }
+    
+
+
     return (
 
         <>
@@ -70,17 +76,17 @@ const PrimaryPage = () => {
                             </div>
                             <div className='flex flex-col'>
                                 <Draggable>
-                                    <div className='bg-black text-white w-28 mt-5 ml-5 '>
+                                    <div  className='bg-black text-white w-28 mt-5 ml-5 '>
                                         card
                                     </div>
                                 </Draggable>
                                 <Draggable>
-                                    <div className='bg-black text-white w-28 mt-5 ml-5 '>
+                                    <div  className='bg-black text-white w-28 mt-5 ml-5 '>
                                         card
                                     </div>
                                 </Draggable>
                                 <Draggable>
-                                    <div className='bg-black text-white w-28 mt-5 ml-5 '>
+                                    <div  className='bg-black text-white w-28 mt-5 ml-5 '>
                                         card
                                     </div>
                                 </Draggable>
@@ -89,7 +95,7 @@ const PrimaryPage = () => {
                         </div>
                         <div className='bg-gray-700 w-28'></div>
                         <div id="board-2" className=" bg-white  mt-36  w-screen items-center h-screen">
-
+                            <DropZoneComponent></DropZoneComponent>
                         </div>
                         <div className='bg-gray-700 w-28'></div>
                         <div className='mt-28 bg-white rounded-l-lg  h-screen  w-96'>
@@ -117,7 +123,6 @@ const PrimaryPage = () => {
                                         <label htmlFor="image" id="image" className='text-xl '>Image:</label>
                                         <input type="file" className='mt-2' id='fileInputFile'/>
                                         <div className='mt-5'>
-                                           
                                             
                                         </div>
                                         <input type="button" onClick={importFile} id='fileButton' value="Importer l'image" className='mt-2 h-9 w-40 rounded-xl bg-slate-900 text-white'  />

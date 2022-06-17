@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 import {BASE_URL} from '../../constant/url'
 import { Button , Input , LinkButton} from '../../components/common/Buttons'
 import { useNavigate } from "react-router-dom";
+import { motion } from 'framer-motion';
+
+
 const RegisterPage = ({history}) => {
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
@@ -77,8 +80,16 @@ const RegisterPage = ({history}) => {
             <form onSubmit={registerHandler} >
         <div className=' shadow-2xl max-w-lg mx-auto  w-5/6 h-screen  bg-slate-900 flex flex-col items-center justify-center '>
             <div className="mb-2   mt-5 flex flex-col items-center justify-center">
-                <h1 className="text-white font-sans text-3xl">S'inscrire</h1>
-                <h2 className="text-white font-sans text-xl mt-2">Remplissez pour votre information</h2>
+                <motion.h1 className="text-white font-sans text-3xl"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 1.5, duration: 1.5 }}
+                >S'inscrire</motion.h1>
+                <motion.h2 className="text-white font-sans text-xl mt-2"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 2.5, duration: 1.5 }}
+                >Remplissez pour votre information</motion.h2>
                         {error && <span className="text-white  bg-red-700 h-12 rounded-xl w-96 mt-5 px-2 ">{error}</span>}
             </div>
              
@@ -111,9 +122,17 @@ const RegisterPage = ({history}) => {
             value={confirmpassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             />
-            <LinkButton page="/">Cliquez ici si vous voulez retourner.</LinkButton>
-            <Button type="submit">S'authentifier</Button>
-            
+           
+                    <motion.div
+                        whileHover={{ scale: 1.1 }}
+                    >
+                        <LinkButton page="/">Cliquez ici si vous voulez retourner.</LinkButton>
+                    </motion.div>
+            <motion.div
+                        whileHover={{ scale: 1.1 }}
+            >
+                        <Button type="submit">S'authentifier</Button>
+            </motion.div>
         </div>
             </form>
         </div>
