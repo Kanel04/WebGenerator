@@ -1,13 +1,16 @@
 import axios from 'axios'
 import { LinkButton, LinkButtonSecond, LinkButtonTertiaire } from "../../components/common/Buttons";
-
-import React, { useState } from 'react'
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
+import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
 import Draggable from "react-draggable";
 import { motion } from 'framer-motion';
 import Board from '../../components/Boards'
 import Card from '../../components/Boards'
 import Avatar from "../../assets/images/Avatar.png";
 import DropZoneComponent from '../../components/DropZoneComponent';
+import Template from './components/template/template';
 const PrimaryPage = () => {
     const [project, setproject] = useState("")
     const PrimaryProject = () => {
@@ -22,7 +25,9 @@ const PrimaryPage = () => {
         let image = document.getElementById("fileImageFile").value;
          
     }
-    
+    const [sidebar,setSideBar] = useState(false);
+
+    const showSidebar = () => setSideBar(!sidebar);
 
 
     return (
@@ -66,37 +71,19 @@ const PrimaryPage = () => {
                     </div>
                     <div className='flex flex-row'>
                         <div className='mt-28 bg-white rounded-r-lg text-center h-screen  w-96'>
-                            <h1 className="text-2xl mt-4">Template</h1>
-                            <div className="mt-5">
-                                <label for="template" >Choisissez votre Template:</label>
-
-                                <select name="template" id="template" className="w-40  mt-2 text-lg px-2 h-7 rounded-xl">
-                                    <option value="header">header</option>
-                                    <option value="navbar">navbar</option>
-                                    <option value="sidebar">sidebar</option>
-                                    <option value="article">article</option>
-                                    <option value="CTA">CTA</option>
-                                    <option value="root">root</option>
-                                    <option value="footer">footer</option>
-                                </select>
-                            </div>
-                            <div className='flex flex-col'>
-                                <Draggable>
-                                    <div  className='bg-black text-white w-28 mt-5 ml-5 '>
-                                        card
-                                    </div>
-                                </Draggable>
-                                <Draggable>
-                                    <div  className='bg-black text-white w-28 mt-5 ml-5 '>
-                                        card
-                                    </div>
-                                </Draggable>
-                                <Draggable>
-                                    <div  className='bg-black text-white w-28 mt-5 ml-5 '>
-                                        card
-                                    </div>
-                                </Draggable>
-                            </div>
+                            <Link to='#' className='menu-navbar'>
+                                <FaIcons.FaBars onClick={showSidebar}></FaIcons.FaBars>
+                            </Link>
+                            <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+                                <ul className='nav-menu-items' onClick={showSidebar}>
+                            <li className='navbar-toggle'>
+                                <Link to='#' className='menu-bars'>
+                                <AiIcons.AiOutlineClose></AiIcons.AiOutlineClose>
+                                </Link>
+                            </li>
+                           <Template></Template>
+                            </ul>
+                            </nav>
 
                         </div>
                         <div className='bg-gray-700 w-28'></div>
