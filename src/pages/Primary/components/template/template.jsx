@@ -1,12 +1,66 @@
 import React from 'react'
+import {motion} from 'framer-motion'
 import Draggable from "react-draggable";
+const showAnimation = {
+    hidden: {
+        width: 0,
+        opacity: 0,
+        transition: {
+            duration: 0.5,
+        },
+    },
+    show: {
+        opacity: 1,
+        width: "auto",
+        transition: {
+            duration: 0.5,
+        },
+    },
+};
+const menuAnimation = {
+    hidden: {
+        opacity: 0,
+        height: 0,
+        padding: 0,
+        transition: { duration: 0.3, when: "afterChildren" },
+    },
+    show: {
+        opacity: 1,
+        height: "auto",
+        transition: {
+            duration: 0.3,
+            when: "beforeChildren",
+        },
+    },
+};
+const menuItemAnimation = {
+    hidden: (i) => ({
+        padding: 0,
+        x: "-100%",
+        transition: {
+            duration: (i + 1) * 0.1,
+        },
+    }),
+    show: (i) => ({
+        x: 0,
+        transition: {
+            duration: (i + 1) * 0.1,
+        },
+    }),
+};
+
 function template() {
   return (
-      <div> <h1 className="text-2xl mt-4">Template</h1>
+      <motion.div
+          variants={showAnimation}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+      > 
           <div className="mt-5">
               <label for="template" >Choisissez votre Template:</label>
 
-              <select name="template" id="template" className="w-40  mt-2 text-lg px-2 h-7 rounded-xl">
+              <select name="template" id="template" className="w-40  mt-5 text-lg px-2 h-7 ">
                   <option value="header">header</option>
                   <option value="navbar">navbar</option>
                   <option value="sidebar">sidebar</option>
@@ -19,7 +73,7 @@ function template() {
 
           <div className='flex flex-col'>
               <Draggable>
-                  <div className='bg-black text-white w-28 mt-5 ml-5 '>
+                  <div className='bg-black text-white w-28 mt-16 ml-5 '>
                       card
                   </div>
               </Draggable>
@@ -34,7 +88,7 @@ function template() {
                   </div>
               </Draggable>
           </div>
-          </div>
+          </motion.div>
   )
 }
 

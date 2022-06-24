@@ -1,16 +1,13 @@
 import axios from 'axios'
-import { LinkButton, LinkButtonSecond, LinkButtonTertiaire } from "../../components/common/Buttons";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
 import {Link} from 'react-router-dom';
 import React, { useState } from 'react';
 import Draggable from "react-draggable";
 import { motion } from 'framer-motion';
-import Board from '../../components/Boards'
-import Card from '../../components/Boards'
-import Avatar from "../../assets/images/Avatar.png";
 import DropZoneComponent from '../../components/DropZoneComponent';
 import Template from './components/template/template';
+import Navbar from './components/navbar/navbar';
+import SideBar from './components/sidebar/sidebar';
+import SideBarRight from './components/sideBarRight/sideBarRight';
 const PrimaryPage = () => {
     const [project, setproject] = useState("")
     const PrimaryProject = () => {
@@ -38,94 +35,18 @@ const PrimaryPage = () => {
             exit={{ opacity: 0 }}
 
         >
-
-            <div className="">
+            <Navbar></Navbar>
+            <div>
                 <div className='bg-gray-700 h-screen flex flex-col'>
-                    <div className="bg-slate-900 h-16 fixed w-screen flex flex-row">
-
-                        <h1 className="text-3xl  text-white ml-3 py-3">WebG.</h1>
-                        <div className='ml-60 pl-60'></div>
-                        <div className=" ml-60 pl-10 mt-3  ">
-
-                            <LinkButton page="/cloud">Mes projects</LinkButton>
-
-                        </div>
-                        <div className=" ml-1 pl-1 mt-5  ">
-
-                            <button className='text-white'>enregistrer</button>
-
-                        </div>
-                        <div className=" ml-1 pl-1 mt-3  ">
-
-                            <LinkButton page="/">Se déconnecter</LinkButton>
-
-                        </div>
-
-                        <LinkButton page="/profile">
-                            <div className='bg-white rounded-full w-9 h-9 mt-2 ml-14 cursor-pointer'>
-                                <label >
-                                    <img src={Avatar} className="rounded-full cursor-pointer" alt="Avatar" />
-                                </label>
-                            </div>
-                        </LinkButton>
-                    </div>
-                    <div className='flex flex-row'>
-                        <div className='mt-28 bg-white rounded-r-lg text-center h-screen  w-96'>
-                            <Link to='#' className='menu-navbar'>
-                                <FaIcons.FaBars onClick={showSidebar}></FaIcons.FaBars>
-                            </Link>
-                            <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-                                <ul className='nav-menu-items' onClick={showSidebar}>
-                            <li className='navbar-toggle'>
-                                <Link to='#' className='menu-bars'>
-                                <AiIcons.AiOutlineClose></AiIcons.AiOutlineClose>
-                                </Link>
-                            </li>
-                           <Template></Template>
-                            </ul>
-                            </nav>
-
-                        </div>
+                        <div className='flex flex-row'>
+                        <SideBar></SideBar>
                         <div className='bg-gray-700 w-28'></div>
                         <div id="board-2" className=" bg-white  mt-36  w-screen items-center h-screen">
                             <DropZoneComponent></DropZoneComponent>
                         </div>
                         <div className='bg-gray-700 w-28'></div>
-                        <div className='mt-28 bg-white rounded-l-lg  h-screen  w-96'>
-                            <h1 className='text-2xl text-center mt-4'>Outils</h1>
-                            <h1 className='text-xl ml-5 mt-5'>Boutton:</h1>
-                            <div id='tols' className='ml-5'>
-
-                                <Draggable>
-                                    <button className='bg-slate-500 w-24 h-8  text-white' >boutton</button>
-                                </Draggable>
-                                <div className='mt-5 pr-5'>
-                                    <h1 className='text-xl'>Texte:</h1>
-                                    <input type="text" placeholder='texte ici' className=' mt-2 w-60 h-9 px-5 rounded-full' />
-
-                                </div>
-                                <div className="mt-5 flex flex-col">
-                                    <h1 className="text-xl">Coleur:</h1>
-                                    <div className='ml-3  '>
-                                        <input type="color" className="cursor-pointer " id='colorInputColor' />
-                                    </div>
-
-                                    <input type="text" placeholder="code coleur" id='colorInputText' className="ml-2  rounded-full w-28 h-7 px-3" />
-                                    <input type="button" id='colorButton' value='Changer le coleur' onClick={changeColor} className='mt-2 h-9 rounded-xl bg-slate-900 text-white' />
-                                    <div className='m-2'>
-                                        <label htmlFor="image" id="image" className='text-xl '>Image:</label>
-                                        <input type="file" className='mt-2' id='fileInputFile'/>
-                                        <div className='mt-5'>
-                                            
-                                        </div>
-                                        <input type="button" onClick={importFile} id='fileButton' value="Importer l'image" className='mt-2 h-9 w-40 rounded-xl bg-slate-900 text-white'  />
-                                    </div>
-                                </div>
-                                <button className='mt-2 bg-slate-900 w-40 h-10 text-white rounded-xl ml-15'>Ajouter</button>
-                            </div>
-
-                        </div>
-
+                        
+                    <SideBarRight></SideBarRight>
                     </div>
 
                 </div>
