@@ -47,7 +47,7 @@ const SideBar = ({ children }) => {
       <div className="bg-white mt-28 rounded-r-xl">
         <motion.div
           animate={{
-            width: isOpen ? "200px" : "45px",
+            width: isOpen ? "250px" : "45px",
 
             transition: {
               duration: 0.5,

@@ -1,6 +1,7 @@
 import React from 'react'
 import {motion} from 'framer-motion'
 import Draggable from "react-draggable";
+import { GrTemplate } from "react-icons/gr";
 const showAnimation = {
     hidden: {
         width: 0,
@@ -59,16 +60,19 @@ function template() {
       > 
           <div className="mt-5">
               <label for="template" >Choisissez votre Template:</label>
-
-              <select name="template" id="template" className="w-40  mt-5 text-lg px-2 h-7 ">
-                  <option value="header">header</option>
-                  <option value="navbar">navbar</option>
-                  <option value="sidebar">sidebar</option>
-                  <option value="article">article</option>
-                  <option value="CTA">CTA</option>
-                  <option value="root">root</option>
-                  <option value="footer">footer</option>
-              </select>
+              <div className="flex flex-row">
+                  <GrTemplate className="mt-5 ml-2"></GrTemplate>
+                  <select name="template" id="template" className="w-40 ml-2  mt-5 text-lg px-2 h-7 ">
+                      <option value="header">header</option>
+                      <option value="navbar">navbar</option>
+                      <option value="sidebar">sidebar</option>
+                      <option value="article">article</option>
+                      <option value="CTA">CTA</option>
+                      <option value="root">root</option>
+                      <option value="footer">footer</option>
+                  </select>
+              </div>
+              
           </div>
 
           <div className='flex flex-col'>

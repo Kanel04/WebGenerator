@@ -1,5 +1,6 @@
 import React from 'react'
 import Draggable from "react-draggable";
+
 function outilsComponents() {
   function changeColor() {
     let color = document.getElementById("colorInputColor").value;
@@ -20,7 +21,7 @@ function outilsComponents() {
           <button className='bg-slate-500 w-24 h-8  text-white' >boutton</button>
         </Draggable>
         <div className='mt-5 pr-5'>
-          <h1 className='text-xl'>Texte:</h1>
+          <h1 className='text-xl ml-2'>Texte:</h1>
           <input type="text" placeholder='texte ici' className=' mt-2 w-40 h-9 px-5 rounded-full' />
 
         </div>
