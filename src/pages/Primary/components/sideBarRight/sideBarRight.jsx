@@ -1,5 +1,5 @@
 
-import { FaBars } from "react-icons/fa";
+import { AiFillSetting } from "react-icons/ai";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Outils from "../utils/outilsComponents";
@@ -47,7 +47,7 @@ const SideBar = ({ children }) => {
             <div className="bg-white mt-28 rounded-l-xl">
                 <motion.div
                     animate={{
-                        width: isOpen ? "200px" : "45px",
+                        width: isOpen ? "180px" : "45px",
 
                         transition: {
                             duration: 0.5,
@@ -65,7 +65,7 @@ const SideBar = ({ children }) => {
                                     initial="hidden"
                                     animate="show"
                                     exit="hidden"
-                                    className="text-center mt-5 text-2xl"
+                                    className="text-center ml-28 mt-5 text-2xl"
                                 >
                                     Outils
                                 </motion.h1>
@@ -73,7 +73,7 @@ const SideBar = ({ children }) => {
                         </AnimatePresence>
 
                         <div className="mt-1 ml-1">
-                            <FaBars onClick={toggle} className="w-8 h-8" />
+                            <AiFillSetting onClick={toggle} className="w-8 h-8" />
                         </div>
                     </div>
 
@@ -86,7 +86,7 @@ const SideBar = ({ children }) => {
                             initial="hidden"
                             animate="show"
                             exit="hidden"
-                            className="text-center mt-5 text-2xl"
+                            
                         >
                             <Outils></Outils>
                         </motion.div>

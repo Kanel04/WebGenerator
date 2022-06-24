@@ -4,7 +4,7 @@ import Avatar from "../../../../assets/images/Avatar.png";
 function navbar() {
   return (
     <div >    
-      <div className="bg-slate-900 h-16 fixed w-screen flex flex-row">
+      <div className="bg-slate-900 h-16   flex flex-row">
 
       <h1 className="text-3xl  text-white ml-3 py-3">WebG.</h1>
       <div className='ml-60 pl-60'></div>
