@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 
 export const Button = (props) => {
-    return <button {...props} className="px-4 py-3 bg-slate-600  shadow-2xl rounded-full w-96 mt-5 mb-16 cursor-pointer  text-white ml-8 hover:bg-slate-900">{props.children}</button>
+    return <button {...props} className="px-4 py-3 bg-slate-600  shadow-2xl rounded-full w-96 mt-5 mb-16 cursor-pointer  text-white ml-8">{props.children}</button>
 }
 
 export const Input = (props) => {
