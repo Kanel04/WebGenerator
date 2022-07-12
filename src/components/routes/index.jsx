@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import {AnimatePresence} from 'framer-motion';
 import { HomePage } from "../../pages/Home/index";
@@ -12,9 +12,18 @@ import CreateProject from "../../pages/Project";
 import Primary from "../../pages/Primary";
 import Profile from "../../pages/Profile"
 import Cloud from "../../pages/Cloud"
+import Modal from "../../pages/Modal"
+
 function AnimateRoutes() {
-    const location = useLocation();
+
+  const location = useLocation();
+
+  //show Modal
+  const [showModal, setShowModal] = useState(true);
+
   return (
+    <>
+    
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
           <Route path="/" element={<HomePage />}></Route>
@@ -28,8 +37,10 @@ function AnimateRoutes() {
           <Route path="/primary" element={<Primary />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/cloud" element={<Cloud />}></Route>
+          <Route path="/modal" element={<Modal />}></Route>
       </Routes>
       </AnimatePresence>
+    </>
   )
 }
 

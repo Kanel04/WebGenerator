@@ -14,6 +14,7 @@ const RegisterPage = ({history}) => {
     const [confirmpassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
 
+
     let navigate = useNavigate();
 
     const registerHandler = async (e) => {
@@ -49,13 +50,12 @@ const RegisterPage = ({history}) => {
             localStorage.setItem("authToken", data.token);
 
             if (localStorage.getItem("authToken")){
-                alert("Vous êtes inscrit");
                 setFirstname("");
                 setLastname("");
                 setEmail("");
                 setPassword("");
                 setConfirmPassword("");
-                navigate("/createproject");
+                navigate("/modal");
             }
 
             history.push("/");
@@ -68,11 +68,6 @@ const RegisterPage = ({history}) => {
     };
 
 
-
-    // const [project, setproject] = useState("")
-    // const RegisterProject = () => {
-    //     axios.post(`http://localhost:5000/api/v1/auth/register`, { project }).then((data) => console.log(data)).catch(err => console.error(err))
-    // }
 
 
     return (

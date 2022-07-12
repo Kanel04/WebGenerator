@@ -1,16 +1,57 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { BASE_URL } from '../../constant/url'
 import { Button , Input ,LinkButton  } from '../../components/common/Buttons'
 import Photo from '../../assets/images/Café.jpg'
 import Avatar from '../../assets/images/Avatar.png'
 import { motion } from 'framer-motion';
+import { useNavigate } from "react-router-dom";
+const ProjectPage = (history) => {
+    // const [project, setproject] = useState("")
+    // const createProject = () => {
+    //     axios.post(`http://localhost:5000/api/createProject`, 
+    //     { project }).then((data) => console.log(data)).catch(err => console.error(err))
+    // }
 
-const ProjectPage = () => {
-    const [project, setproject] = useState("")
-    const createProject = () => {
-        axios.post(`http://localhost:5000/api/createProject`, 
-        { project }).then((data) => console.log(data)).catch(err => console.error(err))
-    }
+    const [project, setProjectname] = useState("");
+    
+    let navigate = useNavigate();
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+
+    const ProjectHandler = async (e) => {
+        e.preventDefault();
+
+        const config = {
+            header: {
+                "Content-Type": "application/json",
+            },
+        };
+
+        try {
+            const { data } = await axios.post(
+                `${BASE_URL}/api/createProject`,
+                { project },
+                config
+            );
+
+         setSuccess(data.data);
+            navigate("/primary");
+
+
+               
+
+
+            history.push("/");
+        } catch (error) {
+            setError(error.response.data.error);
+            setTimeout(() => {
+                setError("");
+            }, 5000);
+        }
+    };
+
+
 
     return (
         <motion.div className='flex-col'
@@ -41,7 +82,9 @@ const ProjectPage = () => {
                     </div>
 
                 </motion.div>
+                
             <div className='flex row  bg-slate-500 '>
+                    <form onSubmit={ProjectHandler}>
                     <div className='pt-28 ml-28 w-60'>
                         <motion.h1 className='text-white  text-3xl h-15 py-3'
                             initial={{ x: -20 }}
@@ -49,19 +92,25 @@ const ProjectPage = () => {
                             transition={{ delay: 0.5, type: 'spring', stiffness: 120 }}
                         >Création de votre projet</motion.h1> 
             <div className='bg-slate-500 '>
-            <Input type="text" onChange={(e) => {
-                setproject(e.target.value)
-            }} placeholder='Le nom de votre projet' />
+                            <Input
+                                type="text"
+                                placeholder="Le nom de votre projet"
+                                value={project}
+                                onChange={(e) => setProjectname(e.target.value)}
+                            />
             </div>
             <div className='bg-slate-500 '>
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                 >
-                                <Button onClick={createProject}>Créer</Button>
+                                    <Button type="submit">Créer</Button>
+                                
                 </motion.div>
          
                         </div>
+                    
                         </div>
+                    </form>      
                     <div className='ml-16'></div>
                         <div>
                             
