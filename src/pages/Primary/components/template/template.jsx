@@ -2,66 +2,38 @@ import React from 'react'
 import {motion} from 'framer-motion'
 import Draggable from "react-draggable";
 import { GrTemplate } from "react-icons/gr";
-const showAnimation = {
-    hidden: {
-        width: 0,
-        opacity: 0,
-        transition: {
-            duration: 0.5,
-        },
-    },
-    show: {
-        opacity: 1,
-        width: "auto",
-        transition: {
-            duration: 0.5,
-        },
-    },
-};
-const menuAnimation = {
-    hidden: {
-        opacity: 0,
-        height: 0,
-        padding: 0,
-        transition: { duration: 0.3, when: "afterChildren" },
-    },
-    show: {
-        opacity: 1,
-        height: "auto",
-        transition: {
-            duration: 0.3,
-            when: "beforeChildren",
-        },
-    },
-};
-const menuItemAnimation = {
-    hidden: (i) => ({
-        padding: 0,
-        x: "-100%",
-        transition: {
-            duration: (i + 1) * 0.1,
-        },
-    }),
-    show: (i) => ({
-        x: 0,
-        transition: {
-            duration: (i + 1) * 0.1,
-        },
-    }),
-};
+
 
 function template() {
+    function dragStart(e) {
+        e.dataTransfer.setData('text/plain', e.target.id);
+        setTimeout(() => {
+            e.target.classList.add('border-blue-600')
+            // e.target.classList.add('hide');
+        }, 0);
+    }
+
+    function dragEnter(e) {
+        e.preventDefault();
+        e.target.classList.add('drag-over');
+    }
+    function dragOver(e) {
+        e.preventDefault();
+        e.target.classList.remove('bg-yellow-500')
+        e.target.classList.add('bg-green-500');
+    }
+
+    function dragLeave(e) {
+        e.target.classList.remove('bg-green-500');
+    }
+    
+
   return (
-      <motion.div
-          variants={showAnimation}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-      > 
+      <div> 
           <div className="mt-5">
-              <label for="template" >Choisissez votre Template:</label>
+              <label for="template" className='text-xl'>Choisissez votre Template:</label>
               <div className="flex flex-row">
-                  <GrTemplate className="mt-5 ml-2"></GrTemplate>
+                  <GrTemplate className="mt-5 ml-5"></GrTemplate>
                   <select name="template" id="template" className="w-40 ml-2  mt-5 text-lg px-2 h-7 ">
                       <option value="header">header</option>
                       <option value="navbar">navbar</option>
@@ -76,23 +48,21 @@ function template() {
           </div>
 
           <div className='flex flex-col'>
-              <Draggable>
-                  <div className='bg-black text-white w-28 mt-16 ml-5 '>
+              
+                  <div
+                   onDragStart={dragStart}
+                   onDragEnter={dragEnter}
+                   onDragOver={dragOver}
+                   onDragLeave={dragLeave}
+                   className='bg-black text-white w-28 mt-16 ml-5 ' 
+                   id='item' 
+                   draggable='true'>
                       card
                   </div>
-              </Draggable>
-              <Draggable>
-                  <div className='bg-black text-white w-28 mt-5 ml-5 '>
-                      card
-                  </div>
-              </Draggable>
-              <Draggable>
-                  <div className='bg-black text-white w-28 mt-5 ml-5 '>
-                      card
-                  </div>
-              </Draggable>
+              
+            
           </div>
-          </motion.div>
+          </div>
   )
 }
 

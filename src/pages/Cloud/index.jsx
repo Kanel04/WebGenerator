@@ -37,7 +37,7 @@ function CloudPage() {
               </LinkButton>
           </div>
           <div className='bg-gray-700   h-screen  mt-16' >
-              <div className='bg-gray-700 overflow-y-scroll  h-auto  flex flex-col'>
+              <div className='bg-gray-700 overflow-y-scroll-hidden  h-auto  flex flex-col'>
                   <CardProject></CardProject>
                   <CardProject></CardProject>
                   <CardProject></CardProject>

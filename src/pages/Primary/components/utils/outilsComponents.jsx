@@ -12,7 +12,8 @@ function outilsComponents() {
 
   }
   return (
-    <div>  <div className='mt-28 bg-white rounded-l-lg  h-screen  '>
+    <div> 
+       <div className='bg-white h-screen  '>
       
       <h1 className='text-xl ml-5 mt-5'>Boutton:</h1>
       <div id='tols' className='ml-5'>
@@ -27,7 +28,7 @@ function outilsComponents() {
         </div>
         <div className="mt-5 flex flex-col">
           <h1 className="text-xl">Coleur:</h1>
-          <div className='ml-3  '>
+          <div className=''>
             <input type="color" className="cursor-pointer " id='colorInputColor' />
           </div>
 

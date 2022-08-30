@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Card (props) {
-    const dragStart = e =>{
+    const dragStart =(e)=>{
     const target = e.target;
  
     e.dataTransfer.setData('card_id',target.id);
@@ -11,7 +11,7 @@ setTimeout(() => {
 },0);
 
     }
-        const dragOver = e => {
+        const dragOver =(e) => {
         e.stopPropagation();
     }
 
