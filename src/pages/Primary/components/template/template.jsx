@@ -8,14 +8,14 @@ function template() {
     function dragStart(e) {
         e.dataTransfer.setData('text/plain', e.target.id);
         setTimeout(() => {
-            e.target.classList.add('border-blue-600')
+            e.target.classList.add('bg-yellow-500')
              e.target.classList.add('hide');
         }, 0);
     }
 
     function dragEnter(e) {
         e.preventDefault();
-        e.target.classList.add('drag-over');
+        e.target.classList.add('drag-over bg-salte-500');
     }
     function dragOver(e) {
         e.preventDefault();

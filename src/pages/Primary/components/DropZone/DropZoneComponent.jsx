@@ -1,11 +1,11 @@
-import React from 'react'
-
+import React, {useCallback} from 'react'
+import {useDropzone} from 'react-dropzone'
 function DropZoneComponent() {
     function drop(e) {
       console.log(e.target);
         const classes = "item bg-yellow-500 w-10 h-10 items-center ml-2 mt-2"
         e.target.classList.remove('drag-over');
-    
+      
         // get the draggable element
         const id = e.dataTransfer.getData('text/plain');
         const draggable = document.getElementById(id);
@@ -21,13 +21,27 @@ function DropZoneComponent() {
         // display the draggable element
         draggable.classList.remove('hide');
     }
+
+    //another dropzone 
+    const onDrop = useCallback(acceptedFiles => {
+      // Do something with the files
+    }, [])
+    const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
   return (
     <div 
     onDrop={drop}
     className='w-screen bg-gray-200 ml-20'
-    >
-
+    >   
+ <div {...getRootProps()} className='w-96 h-96  '>
+      <input {...getInputProps()} />
+      {
+        isDragActive ?
+          <p>Drop the files here ...</p> :
+          <p>Drag 'n' drop some files here, or click to select files</p>
+      }
     </div>
+    </div>
+
   )
 }
 
