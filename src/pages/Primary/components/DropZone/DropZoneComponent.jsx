@@ -21,18 +21,18 @@ function DropZoneComponent() {
         // display the draggable element
         draggable.classList.remove('hide');
     }
-
-    //another dropzone 
-    const onDrop = useCallback(acceptedFiles => {
-      // Do something with the files
-    }, [])
-    const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+//another drop zone
+const onDrop = useCallback(acceptedFiles => {
+  // Do something with the files
+}, [])
+const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+    
   return (
     <div 
     onDrop={drop}
     className='w-screen bg-gray-200 ml-20'
     >   
- <div {...getRootProps()} className='w-96 h-96  '>
+  <div {...getRootProps()}>
       <input {...getInputProps()} />
       {
         isDragActive ?
