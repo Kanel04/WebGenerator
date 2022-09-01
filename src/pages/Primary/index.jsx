@@ -4,10 +4,9 @@ import React, { useState } from 'react';
 import Draggable from "react-draggable";
 import { motion } from 'framer-motion';
 import DropZoneComponent from './components/DropZone/DropZoneComponent';
-import Template from './components/template/Template';
-import Navbar from './components/navbar/Navbar';
+import Navbar from './components/navbar/navbar';
 import SideBar from './components/sidebar/sidebar';
-import SideBarRight from './components/sideBarRight/SideBarRight';
+import SideBarRight from './components/sideBarRight/sideBarRight';
 const PrimaryPage = () => {
     return (
 

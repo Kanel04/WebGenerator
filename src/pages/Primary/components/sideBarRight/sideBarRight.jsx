@@ -2,10 +2,10 @@
 import { AiFillSetting } from "react-icons/ai";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Outils from "../utils/OutilsComponents";
+import Outils from "../utils/outilsComponents";
 
 
-const SideBar = () => {
+const SideBarRight = () => {
     
     return (
         <>
@@ -38,4 +38,4 @@ const SideBar = () => {
     );
 };
 
-export default SideBar;
+export default SideBarRight;

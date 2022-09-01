@@ -2,6 +2,7 @@ import React from 'react'
 
 function DropZoneComponent() {
     function drop(e) {
+      console.log(e.target);
         const classes = "item bg-yellow-500 w-10 h-10 items-center ml-2 mt-2"
         e.target.classList.remove('drag-over');
     
@@ -23,7 +24,7 @@ function DropZoneComponent() {
   return (
     <div 
     onDrop={drop}
-    
+    className='w-screen bg-gray-200 ml-20'
     >
 
     </div>

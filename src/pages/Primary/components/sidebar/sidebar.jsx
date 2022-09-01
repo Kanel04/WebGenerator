@@ -2,7 +2,7 @@
 import { FaBars } from "react-icons/fa";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Template from "../template/Template";
+import Template from "../template/template";
 
 
 const SideBar = () => {

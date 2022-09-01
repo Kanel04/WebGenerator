@@ -1,7 +1,7 @@
 import React from 'react'
 import { LinkButton, LinkButtonSecond, LinkButtonTertiaire } from "../../../../components/common/Buttons";
 import Avatar from "../../../../assets/images/Avatar.png";
-function navbar() {
+function Navbar() {
   return (
     <div >    
       <div className="bg-slate-900 h-16   flex flex-row">
@@ -36,4 +36,4 @@ function navbar() {
   )
 }
 
-export default navbar
+export default Navbar

@@ -37,7 +37,7 @@ const ProjectPage = (history) => {
 
          setSuccess(data.data);
             navigate("/primary");
-
+alert('Votre project est créer');
 
                
 
@@ -111,10 +111,10 @@ const ProjectPage = (history) => {
                     
                         </div>
                     </form>      
-                    <div className='ml-16'></div>
+                    <div className='ml-32'></div>
                         <div>
                             
-                            <img className='ml-96 ' src={Photo} alt="Photo" />
+                            <img className='ml-60 h-screen' src={Photo} alt="Photo" />
                         </div>
                 </div>
         </div>

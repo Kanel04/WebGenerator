@@ -9,7 +9,7 @@ function template() {
         e.dataTransfer.setData('text/plain', e.target.id);
         setTimeout(() => {
             e.target.classList.add('border-blue-600')
-            // e.target.classList.add('hide');
+             e.target.classList.add('hide');
         }, 0);
     }
 
@@ -19,12 +19,11 @@ function template() {
     }
     function dragOver(e) {
         e.preventDefault();
-        e.target.classList.remove('bg-yellow-500')
         e.target.classList.add('bg-green-500');
     }
 
     function dragLeave(e) {
-        e.target.classList.remove('bg-green-500');
+        e.target.classList.add('bg-red-500');
     }
     
 
