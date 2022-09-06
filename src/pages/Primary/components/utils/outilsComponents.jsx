@@ -11,6 +11,26 @@ function outilsComponents() {
     let image = document.getElementById("fileImageFile").value;
 
   }
+  function dragStart(e) {
+    e.dataTransfer.setData('text/plain', e.target.id);
+    setTimeout(() => {
+        
+         e.target.classList.add('hide');
+    }, 0);
+}
+
+function dragEnter(e) {
+    e.preventDefault();
+    
+}
+function dragOver(e) {
+    e.preventDefault();
+   
+}
+
+function dragLeave(e) {
+    e.preventDefault();
+}
   return (
     <div> 
        <div className='bg-white h-screen  '>
@@ -18,9 +38,16 @@ function outilsComponents() {
       <h1 className='text-xl ml-5 mt-5'>Boutton:</h1>
       <div id='tols' className='ml-5'>
 
-        <Draggable>
-          <button className='bg-slate-500 w-24 h-8  text-white' >boutton</button>
-        </Draggable>
+                 <button 
+                 onDragStart={dragStart}
+                 onDragEnter={dragEnter}
+                 onDragOver={dragOver}
+                 onDragLeave={dragLeave}
+                 className='bg-slate-500 w-24 h-8  text-white'
+                 id='item' 
+                 draggable='true'
+                 >boutton</button>
+        
         <div className='mt-5 pr-5'>
           <h1 className='text-xl ml-2'>Texte:</h1>
           <input type="text" placeholder='texte ici' className=' mt-2 w-40 h-9 px-5 rounded-full' />

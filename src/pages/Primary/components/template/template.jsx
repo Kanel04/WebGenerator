@@ -8,22 +8,22 @@ function template() {
     function dragStart(e) {
         e.dataTransfer.setData('text/plain', e.target.id);
         setTimeout(() => {
-            e.target.classList.add('bg-yellow-500')
+            
              e.target.classList.add('hide');
         }, 0);
     }
 
     function dragEnter(e) {
         e.preventDefault();
-        e.target.classList.add('drag-over bg-salte-500');
+        
     }
     function dragOver(e) {
         e.preventDefault();
-        e.target.classList.add('bg-green-500');
+       
     }
 
     function dragLeave(e) {
-        e.target.classList.add('bg-red-500');
+        e.preventDefault();
     }
     
 
@@ -53,7 +53,7 @@ function template() {
                    onDragEnter={dragEnter}
                    onDragOver={dragOver}
                    onDragLeave={dragLeave}
-                   className='bg-black text-white w-28 mt-16 ml-5 ' 
+                   className='drag-over bg-black text-white w-28 mt-16 ml-5 ' 
                    id='item' 
                    draggable='true'>
                       card

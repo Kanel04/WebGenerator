@@ -3,7 +3,7 @@ import {useDropzone} from 'react-dropzone'
 function DropZoneComponent() {
     function drop(e) {
       console.log(e.target);
-        const classes = "item bg-yellow-500 w-10 h-10 items-center ml-2 mt-2"
+        //const classes = "item bg-slate-500 w-10 h-10 items-center ml-2 mt-2"
         e.target.classList.remove('drag-over');
       
         // get the draggable element
@@ -11,9 +11,9 @@ function DropZoneComponent() {
         const draggable = document.getElementById(id);
         const element = document.createElement('div');
         
-        classes.split(' ').forEach((classe)=>{
-            element.classList.add(classe)
-        })
+      //  classes.split(' ').forEach((classe)=>{
+        //    element.classList.add(classe)
+    //    })
     
         // add it to the drop target
         e.target.appendChild(element);
@@ -28,11 +28,12 @@ const onDrop = useCallback(acceptedFiles => {
 const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
     
   return (
+   
     <div 
     onDrop={drop}
     className='w-screen bg-gray-200 ml-20'
     >   
-  <div {...getRootProps()}>
+   <div {...getRootProps()}>
       <input {...getInputProps()} />
       {
         isDragActive ?
