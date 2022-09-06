@@ -6,24 +6,29 @@ import { GrTemplate } from "react-icons/gr";
 
 function template() {
     function dragStart(e) {
-        e.dataTransfer.setData('text/plain', e.target.id);
+        const target = e.target;
+        e.dataTransfer.setData('text/plain', target.id);
         setTimeout(() => {
             
              e.target.classList.add('hide');
         }, 0);
+        console.log('dragStart....');
     }
 
     function dragEnter(e) {
         e.preventDefault();
+        console.log('dragEnter..')
         
     }
     function dragOver(e) {
         e.preventDefault();
+        console.log('dragOver...')
        
     }
 
     function dragLeave(e) {
         e.preventDefault();
+        console.log('dragLeave...')
     }
     
 

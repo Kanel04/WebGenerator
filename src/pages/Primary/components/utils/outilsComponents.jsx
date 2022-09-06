@@ -62,7 +62,7 @@ function dragLeave(e) {
           <input type="text" placeholder="code coleur" id='colorInputText' className="ml-2  rounded-full w-28 h-7 px-3" />
           <input type="button" id='colorButton' value='Changer le coleur' onClick={changeColor} className='mt-2 h-9 rounded-xl w-40 bg-slate-900 text-white' />
           <div className='m-2'>
-            <label htmlFor="image" id="image" className='text-xl '>Image:</label>
+            <label  id="image" className='text-xl '>Image:</label>
             <input type="file" className='mt-2' id='fileInputFile' />
             <div className='mt-5'>
 
