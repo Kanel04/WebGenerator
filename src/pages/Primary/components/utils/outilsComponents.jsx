@@ -12,7 +12,8 @@ function outilsComponents() {
 
   }
   function dragStart(e) {
-    e.dataTransfer.setData('text/plain', e.target.id);
+    const target = e.target;
+    e.dataTransfer.setData('button', target.id);
     setTimeout(() => {
         
          e.target.classList.add('hide');
@@ -24,7 +25,8 @@ function dragEnter(e) {
     
 }
 function dragOver(e) {
-    e.preventDefault();
+  e.stopPropagation();
+   // e.preventDefault();
    
 }
 
@@ -37,17 +39,18 @@ function dragLeave(e) {
       
       <h1 className='text-xl ml-5 mt-5'>Boutton:</h1>
       <div id='tols' className='ml-5'>
-
-                 <button 
-                 onDragStart={dragStart}
-                 onDragEnter={dragEnter}
-                 onDragOver={dragOver}
-                 onDragLeave={dragLeave}
-                 className='bg-slate-500 w-24 h-8  text-white'
-                 id='item' 
-                 draggable='true'
-                 >boutton</button>
-        
+<div
+onDragStart={dragStart}
+onDragEnter={dragEnter}
+onDragOver={dragOver}
+onDragLeave={dragLeave}
+id='button' 
+draggable='true'
+className='w-24 h-8 bg-slate-500'
+>
+ <button className='text-white ml-2 mt-1'>boutton</button>
+</div>
+                
         <div className='mt-5 pr-5'>
           <h1 className='text-xl ml-2'>Texte:</h1>
           <input type="text" placeholder='texte ici' className=' mt-2 w-40 h-9 px-5 rounded-full' />

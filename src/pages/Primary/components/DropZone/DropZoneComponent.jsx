@@ -9,6 +9,14 @@ function DropZoneComponent() {
         const card = document.getElementById(card_id);
         card.style.display = "block";
         e.target.appendChild(card);
+        
+      }
+      if(e.dataTransfer.getData("button")){
+        const card_id = e.dataTransfer.getData("button");
+        const card = document.getElementById(card_id);
+        card.style.display = "block";
+        e.target.appendChild(card);
+        
       }
         //const classes = "item bg-slate-500 w-10 h-10 items-center ml-2 mt-2"
        // e.target.classList.remove('drag-over');
@@ -44,8 +52,8 @@ const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
       <input {...getInputProps()} />
       {
         isDragActive ?
-          <p>Drop the files here ...</p> :
-          <p>Drag 'n' drop some files here, or click to select files</p>
+          <p>Drop the template here ...</p> :
+          <p className='ml-5 mt-2'>Espace de travaille</p>
       }
     </div>
     </div>

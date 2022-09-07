@@ -21,7 +21,8 @@ function template() {
         
     }
     function dragOver(e) {
-        e.preventDefault();
+        //e.preventDefault();
+        e.stopPropagation();
         console.log('dragOver...')
        
     }
