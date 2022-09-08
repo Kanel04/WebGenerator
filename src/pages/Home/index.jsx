@@ -30,15 +30,15 @@ export const HomePage = () => {
     initial={{opacity:0}}
     animate={{opacity:1}}
     exit={{opacity:0}}
-
+    id="home"
     >
-      <motion.div className="bg-slate-900 h-16 w-screen  content-start fixed flex flex-row"
+      <motion.div  className="bg-slate-900 h-16 w-screen  content-start fixed flex flex-row"
         initial={{ y: -10 }}
         animate={{ y: 0 }}
         transition={{ delay: 0.2, type: 'spring', stiffness: 120 }}
       >
 
-        <h1 className="text-3xl  text-white ml-3 py-3   ">WebG.</h1>
+        <a href="#home" className="text-3xl  text-white ml-3 py-3   ">WebG.</a>
 
         <div className=" ml-80 pl-96 mt-3 flex flex-row  ">
           <motion.div
@@ -131,8 +131,7 @@ export const HomePage = () => {
         <div className="flex flex-row">
 
           <motion.div className="bg-white w-96 mb-8 mr-14 h-60 ml-8 rounded-xl "
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            
             transition={{ delay: 5, duration: 3 }}
             whileHover={{ scale: 1.1 }}
           >
@@ -143,9 +142,7 @@ export const HomePage = () => {
             </p>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 6, duration: 3 }}
+          
           >
             <img src={WebPhoto3} className='h-96 rounded-xl  ' alt="Web photo" />
           </motion.div>
@@ -155,23 +152,16 @@ export const HomePage = () => {
         <h1 className="text-4xl text-white text-center py-16">Contact</h1>
         <div className="px-16 flex flex-row">
           <motion.div className=" px-5 "
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 12, duration: 3 }}
+           
           >
             <img src={PhotoOrdinateur} className="w-96 h-80 " alt="ordinateur" />
           </motion.div>
           <motion.div className=" px-5"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 13, duration: 3 }}
+            
           >
             <img src={PhotoSocial} className="w-96 h-80 " alt="social" />
           </motion.div>
           <motion.div className=" px-5"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 14, duration: 3 }}
 
           >
             <img src={PhotoEntreprise} className="w-96 h-80 " alt="entreprise" />
