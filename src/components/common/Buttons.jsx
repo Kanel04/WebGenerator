@@ -11,7 +11,7 @@ export const Input = (props) => {
 
 export const LinkButton = (props) => {
     return <Link to={props.page}>
-        <span className="px-4 py-2   text-white inline-block">{props.children}</span>
+        <span className={`px-4   ${props.className} text-white inline-block`}>{props.children}</span>
     </Link>
 }
 

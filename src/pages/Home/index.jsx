@@ -44,25 +44,26 @@ export const HomePage = () => {
           <motion.div
             whileHover={{ scale: 1.1 }}
           >
-            <LinkButton page="/">A Prôpos</LinkButton>
+            <a href="#about" className="text-white ml-3 ">A Prôpos</a>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.1 }}
           >
-            <LinkButton page="/">Services</LinkButton>
+            <a href="#service" className="text-white ml-3 ">Services</a>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.1 }}
           >
-            <LinkButton page="/">Contact</LinkButton>
+            <a href="#contact" className="text-white ml-3 ">Contact</a>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.1 }}
+            
           >
-            <LinkButton page="/login">Se connecter</LinkButton>
+            <LinkButton page="/login" >Se connecter</LinkButton>
           </motion.div>
 
-          <motion.div className="mt-3"
+          <motion.div className="mt-2"
             whileHover={{ scale: 1.1 }}
           >
             <LinkButtonSecond page="/register">S'inscrire</LinkButtonSecond>
@@ -92,8 +93,8 @@ export const HomePage = () => {
         </motion.div>
 
       </motion.div>
-      <div className="bg-slate-500 h-screen  ">
-        <h1 className="py-9 text-white text-4xl text-center">Services</h1>
+      <div id="service" className="bg-slate-500 h-screen  ">
+        <h1 className="py-16 text-white text-4xl text-center">Services</h1>
         <div className="flex flex-row space-x-16  ">
           <motion.div className="bg-white w-96 h-96 ml-10 rounded-xl"
             whileHover={{ scale: 1.1 }}
@@ -124,9 +125,9 @@ export const HomePage = () => {
           </motion.div>
         </div>
       </div>
-      <div className="h-screen bg-slate-900   ">
+      <div id="about" className="h-screen bg-slate-900   ">
 
-        <h1 id="propos" className=" text-white text-3xl text-center py-5">à Prôpos</h1>
+        <h1  className=" text-white text-3xl text-center py-16">à Prôpos</h1>
         <div className="flex flex-row">
 
           <motion.div className="bg-white w-96 mb-8 mr-14 h-60 ml-8 rounded-xl "
@@ -150,8 +151,8 @@ export const HomePage = () => {
           </motion.div>
         </div>
       </div>
-      <div className="bg-gray-500 h-screen ">
-        <h1 className="text-4xl text-white text-center py-8">Contact</h1>
+      <div id="contact" className="bg-gray-500 h-screen ">
+        <h1 className="text-4xl text-white text-center py-16">Contact</h1>
         <div className="px-16 flex flex-row">
           <motion.div className=" px-5 "
             initial={{ opacity: 0 }}
