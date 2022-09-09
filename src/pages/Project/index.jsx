@@ -111,7 +111,7 @@ alert('Votre project est créer');
                     
                         </div>
                     </form>      
-                  <div className='ml-2'></div>
+                  <div className='ml-9'></div>
                         <div>
                             
                             <img className='ml-80 h-screen' src={Photo} alt="Photo" />

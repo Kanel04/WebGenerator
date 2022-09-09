@@ -13,7 +13,7 @@ function Navbar() {
         <LinkButton page="/cloud">Mes projects</LinkButton>
 
       </div>
-      <div className=" ml-1 pl-1 mt-5  ">
+      <div className=" ml-1 pl-1 mt-3  ">
 
         <button className='text-white'>enregistrer</button>
 
