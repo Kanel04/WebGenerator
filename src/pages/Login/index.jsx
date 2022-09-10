@@ -79,7 +79,7 @@ const LoginPage = ({ history }) => {
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 3.5, duration: 1.5 }}
             >Connexion</motion.h1>
-            {error && <span className="text-white text-xl bg-red-700 rounded-xl h-9 w-96 mt-5 px-2 ">{error}</span>}
+            {error && <span className="text-white text-xl bg-red-700 rounded-xl h-14 w-96 mt-5 px-2 ">{error}</span>}
             </div>
             
                     <Input

@@ -2,7 +2,7 @@ import React from 'react'
 import {motion} from 'framer-motion'
 import Draggable from "react-draggable";
 import { GrTemplate } from "react-icons/gr";
-
+import Framer from '../Iframe/index'
 
 function template() {
     function dragStart(e) {
@@ -64,8 +64,7 @@ function template() {
                    draggable='true'>
                       card
                   </div>
-              
-            
+             
           </div>
           </div>
   )
