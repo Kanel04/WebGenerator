@@ -32,6 +32,21 @@ function template() {
         console.log('dragLeave...')
     }
     
+// Iframe component with Backend
+const componentText = document.querySelector("#component-text");
+const componentContainer = document.querySelector("#components_list");
+const loadComponents = () => {
+    componentText.textContent = "Loading components...";
+    fetch("/components")
+      .then((res) => res.json())
+      .then((data) => {
+        for (item of data) {
+          appendComponentToList(item.components);
+        }
+      })
+      .catch((error) => alert(error))
+      .finally(() => (componentText.textContent = "Components list"));
+  };
 
   return (
       <div> 
@@ -64,7 +79,11 @@ function template() {
                    draggable='true'>
                       card
                   </div>
-             
+             <div>
+                <h1 id="component-text" className='font-bold'>components List</h1>
+                <ul id="components_list" onLoad={loadComponents} className="my-4 grid grid-cols-1 gap-8"></ul>
+                
+             </div>
           </div>
           </div>
   )
