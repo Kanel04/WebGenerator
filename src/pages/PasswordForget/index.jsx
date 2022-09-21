@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button, Input, LinkButton } from "../../components/common/Buttons";
 import { BASE_URL } from "../../constant/url";
 import { motion } from "framer-motion";
-
+import  toast  from "react-hot-toast";
 const PasswordForgetPage = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
@@ -27,10 +27,12 @@ const PasswordForgetPage = () => {
 
       setSuccess(data.data);
       console.log(data.data);
+      toast.success("Email envoyé")
     } catch (error) {
       setError(error);
       //setError(error.response.data.error);
       setEmail("");
+      toast.error("Compte non existant")
       setTimeout(() => {
         setError("");
       }, 5000);
@@ -71,16 +73,7 @@ const PasswordForgetPage = () => {
               >
                 Pour trouver Votre Compte
               </motion.h1>
-              {error && (
-                <span className="text-white  bg-red-700 h-12 rounded-xl w-96 mt-5 px-2">
-                  Ce compte n'existe pas
-                </span>
-              )}
-              {success && (
-                <span className="text-white  bg-green-700 h-12 rounded-xl w-96 mt-5 px-2">
-                  Verifier votre Email
-                </span>
-              )}
+              
             </div>
 
             <Input

@@ -6,12 +6,8 @@ import Photo from '../../assets/images/Café.jpg'
 import Avatar from '../../assets/images/Avatar.png'
 import { motion } from 'framer-motion';
 import { useNavigate } from "react-router-dom";
+import  toast  from 'react-hot-toast'
 const ProjectPage = (history) => {
-    // const [project, setproject] = useState("")
-    // const createProject = () => {
-    //     axios.post(`http://localhost:5000/api/createProject`, 
-    //     { project }).then((data) => console.log(data)).catch(err => console.error(err))
-    // }
 
     const [project, setProjectname] = useState("");
     
@@ -36,8 +32,9 @@ const ProjectPage = (history) => {
             );
 
          setSuccess(data.data);
-            navigate("/primary");
-alert('Votre project est créer');
+         toast.success(`${project} est créer`);
+   
+         navigate("/primary");
 
                
 
@@ -47,6 +44,7 @@ alert('Votre project est créer');
             setError(error.response.data.error);
             setTimeout(() => {
                 setError("");
+                toast.error("Création non validé")
             }, 5000);
         }
     };

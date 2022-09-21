@@ -12,8 +12,7 @@ import CreateProject from "../../pages/Project";
 import Primary from "../../pages/Primary";
 import Profile from "../../pages/Profile"
 import Cloud from "../../pages/Cloud"
-import Modal from "../../pages/Modal"
-
+import {Toaster} from 'react-hot-toast'
 function AnimateRoutes() {
 
   const location = useLocation();
@@ -26,7 +25,7 @@ function AnimateRoutes() {
     <>
     
     <AnimatePresence>
-      
+<Toaster></Toaster>      
       <Routes location={location} key={location.pathname}>
       <Route path="*" element={<ErrorPage/>}></Route>
           <Route path="/" element={<HomePage />}></Route>
@@ -35,12 +34,11 @@ function AnimateRoutes() {
           <Route path="/project" element={<ProjectPage />}></Route>
           <Route path="/register" element={<RegisterPage />}></Route>
           <Route path="/passwordforget" element={<PasswordForgetPage />}></Route>
-          <Route path="/confirmpassword" element={<ConfirmPasswordPage />}></Route>
+          <Route path="/resetpassword" element={<ConfirmPasswordPage />}></Route>
           <Route path="/createproject" element={<CreateProject />}></Route>
           <Route path="/primary" element={<Primary />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/cloud" element={<Cloud />}></Route>
-          <Route path="/modal" element={<Modal />}></Route>
       </Routes>
       </AnimatePresence>
     </>

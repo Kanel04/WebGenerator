@@ -24,7 +24,7 @@ const ConfirmPasswordPage = () => {
           setTimeout(() => {
             setError("");
           }, 5000);
-          return setError("Passwords don't match");
+           setError("Mot de passe différent");
         }
     
         try {

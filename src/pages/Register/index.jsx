@@ -4,7 +4,7 @@ import {BASE_URL} from '../../constant/url'
 import { Button , Input , LinkButton} from '../../components/common/Buttons'
 import { useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion';
-
+import  toast  from 'react-hot-toast'
 
 const RegisterPage = ({history}) => {
     const [firstname, setFirstname] = useState("");
@@ -55,7 +55,8 @@ const RegisterPage = ({history}) => {
                 setEmail("");
                 setPassword("");
                 setConfirmPassword("");
-                navigate("/modal");
+                toast.success(`${firstname} ${lastname} vous êtes inscrit`)
+                navigate("/project");
             }
 
             history.push("/");
@@ -63,6 +64,7 @@ const RegisterPage = ({history}) => {
             setError(error.response.data.error);
             setTimeout(() => {
                 setError("");
+                toast.error(`identification no validé`)
             }, 5000);
         }
     };
