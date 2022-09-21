@@ -20,12 +20,15 @@ function AnimateRoutes() {
 
   //show Modal
   const [showModal, setShowModal] = useState(true);
+  
 
   return (
     <>
     
     <AnimatePresence>
+      
       <Routes location={location} key={location.pathname}>
+      <Route path="*" element={<ErrorPage/>}></Route>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/login" element={<LoginPage />}></Route>
           <Route path="/error" element={< ErrorPage />}></Route>
