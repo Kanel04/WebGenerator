@@ -59,11 +59,11 @@ className='w-24 h-8 bg-slate-500'
         <div className="mt-5 flex flex-col">
           <h1 className="text-xl">Coleur:</h1>
           <div className=''>
-            <input type="color" className="cursor-pointer " id='colorInputColor' />
+            <input type="color" className="cursor-pointer " id='colorInputColor' onChange={changeColor} />
           </div>
 
-          <input type="text" placeholder="code coleur" id='colorInputText' className="ml-2  rounded-full w-28 h-7 px-3" />
-          <input type="button" id='colorButton' value='Changer le coleur' onClick={changeColor} className='mt-2 h-9 rounded-xl w-40 bg-slate-900 text-white' />
+          <input type="text" placeholder="code coleur" id='colorInputText' onChange={changeColor} className="ml-2  rounded-full w-28 h-7 px-3" />
+         
           <div className='m-2'>
             <label  id="image" className='text-xl '>Image:</label>
             <input type="file" className='mt-2' id='fileInputFile' />

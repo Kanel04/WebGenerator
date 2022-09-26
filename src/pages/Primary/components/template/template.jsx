@@ -2,7 +2,8 @@ import React from 'react'
 import {motion} from 'framer-motion'
 import Draggable from "react-draggable";
 import { GrTemplate } from "react-icons/gr";
-import Framer from '../Iframe/index'
+import Iframe from '../Iframe';
+
 
 function template() {
     function dragStart(e) {
@@ -32,26 +33,12 @@ function template() {
         console.log('dragLeave...')
     }
     
-// Iframe component with Backend
-const componentText = document.querySelector("#component-text");
-const componentContainer = document.querySelector("#components_list");
-const loadComponents = () => {
-    componentText.textContent = "Loading components...";
-    fetch("/components")
-      .then((res) => res.json())
-      .then((data) => {
-        for (item of data) {
-          appendComponentToList(item.components);
-        }
-      })
-      .catch((error) => alert(error))
-      .finally(() => (componentText.textContent = "Components list"));
-  };
+
 
   return (
       <div> 
           <div className="mt-5">
-              <label for="template" className='text-xl'>Choisissez votre Template:</label>
+              <label className='text-xl'>Choisissez votre Template:</label>
               <div className="flex flex-row">
                   <GrTemplate className="mt-5 ml-5"></GrTemplate>
                   <select name="template" id="template" className="w-40 ml-2  mt-5 text-lg px-2 h-7 ">
@@ -67,22 +54,20 @@ const loadComponents = () => {
               
           </div>
 
-          <div className='flex flex-col'>
+          <div className=' mt-16 ml-5'>
               
                   <div
                    onDragStart={dragStart}
                    onDragEnter={dragEnter}
                    onDragOver={dragOver}
                    onDragLeave={dragLeave}
-                   className='drag-over bg-black text-white w-28 mt-16 ml-5 ' 
+                   className='drag-over bg-black text-white w-28 ' 
                    id='item' 
                    draggable='true'>
                       card
                   </div>
              <div>
-                <h1 id="component-text" className='font-bold'>components List</h1>
-                <ul id="components_list" onLoad={loadComponents} className="my-4 grid grid-cols-1 gap-8"></ul>
-                
+<Iframe></Iframe>
              </div>
           </div>
           </div>

@@ -46,7 +46,7 @@ const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
    
     <div 
     onDrop={drop}
-    className='w-screen bg-gray-200 ml-20'
+    className='w-screen bg-gray-200 border-5 p-2 min-h-[70vh]'
     >   
    <div {...getRootProps()}>
       <input {...getInputProps()} />
