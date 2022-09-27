@@ -1,7 +1,7 @@
 import React from 'react';
 
 function IframeComponent() {
-  const componentText = document.querySelector("#component-text");
+/*   const componentText = document.querySelector("#component-text");
 const componentContainer = document.querySelector("#components_list");
 
 const loadComponents = () => {
@@ -30,11 +30,11 @@ const appendComponentToList = (data) => {
 
 loadComponents();
 
-
+ */
   return (
     <div>
         <h1 id="component-text"   className="font-bold">Components List</h1>
-        <ul id="components_list" onLoad={loadComponents}  className="my-4 grid grid-cols-1 gap-8">
+        <ul id="components_list"   className="my-4 grid grid-cols-1 gap-8">
                     
         </ul>
     </div>
