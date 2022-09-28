@@ -1,7 +1,19 @@
-import React from 'react'
+import React , { useState , useEffect } from 'react'
 import Draggable from "react-draggable";
 
 function outilsComponents() {
+const [images , setImages]= useState([]);
+const [imageURLs , setImageURLs] = useState([]);
+useEffect (()=>{
+  if (images.length < 1)return;
+  const newImageUrls = [];
+  images.forEach(image => newImageUrls.push(URL.createObjectURL(image)));
+  setImageURLs(newImageUrls);
+}, [images]);
+function onImageChange (e){
+  setImages ([...e.target.files]);
+
+}
   function changeColor() {
     let color = document.getElementById("colorInputColor").value;
     document.getElementById("colorInputText").value = color;
@@ -66,14 +78,15 @@ className='w-24 h-8 bg-slate-500'
          
           <div className='m-2'>
             <label  id="image" className='text-xl '>Image:</label>
-            <input type="file" className='mt-2' id='fileInputFile' />
+            
             <div className='mt-5'>
-
+            <input type="file" multiple accept='image/*' onChange={onImageChange} className='mt-2' id='fileInputFile' />
+            {imageURLs.map(imageSrc => <img src={imageSrc} draggable='true'/> )}
             </div>
-            <input type="button" onClick={importFile} id='fileButton' value="Importer l'image" className='mt-2 h-9 w-40 rounded-xl bg-slate-900 text-white' />
+            
           </div>
         </div>
-        <button className='mt-2 bg-slate-900 w-40 h-10 text-white rounded-xl ml-15'>Ajouter</button>
+        
       </div>
 </div>
     </div>
