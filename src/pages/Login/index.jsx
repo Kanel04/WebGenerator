@@ -42,9 +42,12 @@ const LoginPage = ({ history }) => {
             );
 
             localStorage.setItem("authToken", data.token);
+            console.log(data.data.user["_id"]);
+            localStorage.setItem("userId", data.data.user["_id"]);
             navigate("/createproject");
         } catch (error) {
-            setError(error.response.data.error);
+            console.log(error.message);
+            setError(error.message);
             setTimeout(() => {
                 setError("Mot de Passe Incorrect ou Email Incorrect ");
             }, 5000);

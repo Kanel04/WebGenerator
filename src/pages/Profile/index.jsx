@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import {BASE_URL} from '../../constant/url';
 import { motion } from 'framer-motion';
@@ -6,6 +6,9 @@ import { BiPencil } from "react-icons/bi";
 import { LinkButton, LinkButtonSecond, LinkButtonTertiaire } from "../../components/common/Buttons";
 import Avatar from "../../assets/images/Avatar.png";
 import  toast  from 'react-hot-toast';
+import axios from 'axios';
+import { states } from "../../states/index";
+
 function profile() {
   //show input 
   const showInput = () => {
@@ -37,7 +40,28 @@ const [lastname, setLastname] = useState("");
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const [error, setError] = useState("");
+const [userProfile, setUserProfile] = useState({});
 
+//patch id 
+//const [idUser , setIdUser] = useState("");
+useEffect(async() =>{
+  const config = {
+    header: {
+        "Content-Type": "application/json",
+    },
+};
+const idUser = localStorage.getItem("userId");
+const { data } = await axios.get(
+  `${BASE_URL}/api/v1/users/${idUser}`, config
+  
+);
+
+setFirstname(data.data.firstname);
+setLastname(data.data.lastname);
+setEmail(data.data.email);
+
+
+}, []); 
 
 let navigate = useNavigate();
 
@@ -50,9 +74,11 @@ const profilHandler = async (e) => {
         },
     };
 
+    const idUser = localStorage.getItem("userId"); 
+
     try {
-        const { data } = await axios.get(
-            `${BASE_URL}/api/v1/users/:id`,
+        const { data } = await axios.patch(
+            `${BASE_URL}/api/v1/users/${idUser}`,
             {
                 firstname,
                 lastname,
@@ -63,17 +89,20 @@ const profilHandler = async (e) => {
         );
 
         localStorage.setItem("authToken", data.token);
-
-        history.push("/");
+        toast.success("Modifications terminées");
+        navigate("/primary");
     } catch (error) {
         setError(error);
-        setTimeout(() => {
+        /* setTimeout(() => {
             setError("");
             toast.error(`identification non indentifier`)
-        }, 5000);
+        }, 5000); */
     }
 };
 
+  const updateProfile = () => {
+
+  };
 
   return (
     <motion.div className='bg-gray-300 w-full h-screen top-0 left-0 '
@@ -96,7 +125,13 @@ const profilHandler = async (e) => {
     className='text-white'
     >{firstname}</p>
       <BiPencil id='Icon_id' onClick={showInput}  className=" ml-5 cursor-pointer"></BiPencil>
-        <input type="text" id='Input_id' className='hidden ml-3 h-7 mt-2 px-3 rounded-xl'/>
+        <input 
+        type="text" 
+        id='Input_id' 
+        className='hidden ml-3 h-7 mt-2 px-3 rounded-xl'
+        value={firstname}
+        onChange={(e) => setFirstname(e.target.value)}
+        />
     </div>
         <label  className='text-white mt-5'>Prénom:</label>
      <div className='flex flex-row' >
@@ -105,7 +140,13 @@ const profilHandler = async (e) => {
      className='text-white'
      >{lastname}</p>
       <BiPencil id='Icon_id2' onClick={showInput} className="  ml-5 cursor-pointer"></BiPencil>
-        <input type="text" id='Input_id2' className='hidden ml-3 h-7 mt-2 px-3 rounded-xl'/>
+        <input 
+        type="text" 
+        id='Input_id2' 
+        className='hidden ml-3 h-7 mt-2 px-3 rounded-xl'
+        value={lastname}
+        onChange={(e) => setLastname(e.target.value)}
+        />
     </div>
         <label  className='text-white mt-5'>Email:</label>
     <div className='flex flex-row'>
@@ -114,7 +155,13 @@ const profilHandler = async (e) => {
     className='text-white'
     >{email}</p>
       <BiPencil id='Icon_id3' onClick={showInput}  className=" ml-5 cursor-pointer"></BiPencil>
-        <input type="text" id='Input_id3' className='hidden ml-3 h-7 mt-2 px-3 rounded-xl'/>
+        <input 
+        type="text" 
+        id='Input_id3' 
+        className='hidden ml-3 h-7 mt-2 px-3 rounded-xl'
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        />
     </div>
         <label  className='text-white mt-5'>Mot de passe:</label>
     <div className='flex flex-row'>
@@ -123,7 +170,13 @@ const profilHandler = async (e) => {
       className='text-white'
       >{password}</p>
       <BiPencil id='Icon_id4' onClick={showInput} className=" ml-5 cursor-pointer"></BiPencil>
-        <input type="password" id='Input_id4' className='hidden ml-3 h-7 mt-2 px-3 rounded-xl'/>
+        <input 
+        type="password" 
+        id='Input_id4' 
+        className='hidden ml-3 h-7 mt-2 px-3 rounded-xl'
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        />
     </div>
         </div>
         <div className='flex flex-row '>

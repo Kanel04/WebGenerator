@@ -64,7 +64,8 @@ function Navbar() {
       </div>
       <div className=" ml-1 pl-1 mt-3  ">
 
-        <LinkButton page="/">Se déconnecter</LinkButton>
+      <button className='text-white' onClick={()=>{localStorage.removeItem("userId"); navigate("/")}}>se deconnecter</button>
+     
 
       </div>
 
