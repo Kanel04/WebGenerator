@@ -66,15 +66,24 @@ const ProjectPage = (history) => {
                 >
 
                     <h1 className="text-3xl  text-white ml-3 py-3   ">WebG.</h1>
-<div className='ml-80'></div>
-                    <motion.div className=" ml-96 pl-80 mt-2  "
+<div className='ml-80 w-60'></div>
+                    <motion.div className=" ml-96  mt-2  "
                         whileHover={{ scale: 1.1 }}
                     >
 
-                        <LinkButton page="/">Se déconnecter</LinkButton>
+<LinkButton page="/primary">Espace de travail</LinkButton>
+</motion.div>
+                   <motion.div
+                   className='mt-2'
+                     whileHover={{ scale: 1.1 }}
+                   >
+                   <button className='text-white' onClick={()=>{localStorage.removeItem("userId"); navigate("/")}}>se deconnecter</button>
+     
+                   </motion.div>
+      
 
-                    </motion.div>
-                    <div className=' ml-8 mt-1'>
+     
+                    <div className='  mt-1'>
                         <LinkButton page="/profile"><img src={Avatar} className=" rounded-full w-9 h-9 " alt="Avatar" /></LinkButton>
                         
                     </div>
@@ -109,7 +118,7 @@ const ProjectPage = (history) => {
                     
                         </div>
                     </form>      
-                  <div className='ml-9'></div>
+                  <div className='ml-9 w-20'></div>
                         <div>
                             
                             <img className='ml-80 h-screen' src={Photo} alt="Photo" />

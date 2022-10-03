@@ -1,7 +1,10 @@
-import {useRef, useEffect} from 'react';
+import React , {useRef, useEffect , useState} from 'react';
+
 
 function IframeComponent() {
   const ref = useRef(null);
+
+  const [parent, setParent] = useState(null);
 
  
   const loadComponents = () => {
@@ -66,25 +69,27 @@ function dragLeave(e) {
     console.log('dragLeave...')
 }
 
+
+
+
   return (
     <div className='overflow-y-auto h-96'>
         <h1 id="component-text" ref={ref}  className="font-bold">Liste des components</h1>
         <ul id="components_list" onLoad={loadComponents}  className="my-4 grid grid-cols-1 gap-8">
        <div
-           id='item'
-           onDrag={dragStart}
-           onDragEnter={dragEnter}
-           onDragOver={dragOver}
-           onDragLeave={dragLeave}
-           draggable="true"
+       onDrag={dragStart}
+       onDragOver={dragOver}
+       onDragLeave={dragLeave}
+       onDragEnter={dragEnter}
+       id="item"
        >
-       <iframe
-          src="http://localhost:5000/navbar"
-          width="500%"
-          height="50%"
-        ></iframe>
-       </div>
-      
+  <iframe
+     src="http://localhost:5000/navbar"
+     width="500%"
+     height="50%"
+   ></iframe>
+ </div>
+
         </ul>
         <ul id="components_list" onLoad={loadComponents}  className="mt-2">
        

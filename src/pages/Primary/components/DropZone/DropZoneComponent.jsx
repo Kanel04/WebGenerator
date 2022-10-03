@@ -1,6 +1,5 @@
 import React, {useCallback} from 'react'
 import {useDropzone} from 'react-dropzone'
-
 function DropZoneComponent() {
     function drop(e) {
       e.preventDefault();
@@ -40,7 +39,7 @@ const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
       {
         isDragActive ?
           <p>Drop the template here ...</p> :
-          <p className='ml-5 mt-2 text-gray-200'>Espace de travaille</p>
+          <p className='ml-5 mt-2 text-gray-200'></p>
       }
     </div>
     </div>

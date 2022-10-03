@@ -89,7 +89,7 @@ export const HomePage = () => {
         <motion.div className="w-2  ml-96 pl-60 "
           whileHover={{ scale: 1.1 }}
         >
-          <LinkButtonTertiaire page="/login"  >Démmarer</LinkButtonTertiaire>
+          <LinkButtonTertiaire page="/login" className="ml-5"  >Démmarer</LinkButtonTertiaire>
         </motion.div>
 
       </motion.div>

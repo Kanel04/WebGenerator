@@ -24,7 +24,7 @@ export const LinkButtonSecond = (props) => {
 export const LinkButtonTertiaire = (props) => {
     return <Link to={props.page}>
         
-            <span className="px-9 py-3   bg-slate-900  rounded-full mt-9 text-white">{props.children}</span>
+            <span className={`px-9 py-3   bg-slate-900  rounded-full mt-9 text-white ${props.className}`}>{props.children}</span>
         
       
     </Link>

@@ -56,7 +56,7 @@ const RegisterPage = ({history}) => {
                 setPassword("");
                 setConfirmPassword("");
                 toast.success(`${firstname} ${lastname} vous êtes inscrit`)
-                navigate("/project");
+                navigate("/login");
             }
 
             history.push("/");
