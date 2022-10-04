@@ -42,8 +42,6 @@ const [password, setPassword] = useState("");
 const [error, setError] = useState("");
 const [userProfile, setUserProfile] = useState({});
 
-//patch id 
-//const [idUser , setIdUser] = useState("");
 useEffect(async() =>{
   const config = {
     header: {
@@ -87,16 +85,13 @@ const profilHandler = async (e) => {
             },
             config
         );
-
         localStorage.setItem("authToken", data.token);
         toast.success("Modifications terminées");
-        navigate("/primary");
+        navigate("/profile");
     } catch (error) {
         setError(error);
-        /* setTimeout(() => {
-            setError("");
-            toast.error(`identification non indentifier`)
-        }, 5000); */
+         toast.error(`Modification non validé`)
+        
     }
 };
 
@@ -113,7 +108,7 @@ const profilHandler = async (e) => {
     >
       
       <div className='bg-gray-300 text-gray-300'>p</div>
-      <div className='bg-slate-900 flex flex-col mt-9 w-96 h-sreen ml-96 px-9 rounded-2xl'>
+      <div className='bg-slate-900 flex flex-col mt-9 w-full h-sreen  px-9 '>
         <form onSubmit={profilHandler}>
         <h1 className="text-3xl text-white text-center mt-5">Profile</h1>
         <div className='flex flex-col'>
@@ -179,8 +174,9 @@ const profilHandler = async (e) => {
         />
     </div>
         </div>
-        <div className='flex flex-row '>
-          <LinkButton page="/primary"className='mt-9 bg-white  w-28 h-10 rounded-full text-black px-6 py-2 text-lg'>Retour</LinkButton>
+        <div className='flex flex-row w-96'>
+          <LinkButton page="/primary"className='mt-9 bg-white  w-60 h-10 rounded-full text-black px-11 py-2 text-lg'>Espace de travail</LinkButton>
+          <LinkButton page="/createproject"className='mt-9 bg-white  w-60 h-10 ml-2 rounded-full text-black px-11 py-2 text-lg'>Créer un project</LinkButton>
           <div className='ml-5 m-9 mt-5 py-5'>
           <button type="submit" id='Button_id' className=' bg-red-700 h-10  w-28 py-2 rounded-full text-white'>Modifier</button>
           </div>

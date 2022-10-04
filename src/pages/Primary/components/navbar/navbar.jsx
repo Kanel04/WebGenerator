@@ -22,7 +22,7 @@ function Navbar() {
       };
 
       try {
-          const { data } = await axios.post(
+          const { data } = await axios.get(
               `${BASE_URL}/api/readProject`,
               { project },
               config
@@ -36,11 +36,10 @@ function Navbar() {
 
           history.push("/");
       } catch (error) {
-          setError(error.response.data.error);
-          setTimeout(() => {
-              setError("");
-              toast.error("action non validé")
-          }, 5000);
+          setError(error);
+         
+            toast.error("action non validé")
+          
       }
   };
 

@@ -34,7 +34,7 @@ const ProjectPage = (history) => {
          setSuccess(data.data);
          toast.success(`${project} est créer`);
    
-         navigate("/primary");
+        
 
                
 
