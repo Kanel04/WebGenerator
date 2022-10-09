@@ -37,14 +37,12 @@ function Navbar() {
           history.push("/");
       } catch (error) {
           setError(error);
-         
-            toast.error("action non validé")
           
       }
   };
-
-
-
+function click () {
+  toast.success("enregistrer")
+}
   return (
     <div >    
       <div className="bg-slate-900 h-16   flex flex-row">
@@ -58,7 +56,7 @@ function Navbar() {
       </div>
       <div className=" ml-1 pl-1 mt-3  ">
 
-        <button className='text-white'>enregistrer</button>
+        <button className='text-white' onClick={click} >enregistrer</button>
 
       </div>
       <div className=" ml-1 pl-1 mt-3  ">

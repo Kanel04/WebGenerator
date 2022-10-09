@@ -5,8 +5,8 @@ function DropZoneComponent() {
       e.preventDefault();
       console.log(e.target);
        
-      if(e.dataTransfer.getData("text/plain")){
-        const card_id = e.dataTransfer.getData("text/plain");
+      if(e.dataTransfer.getData("navbar")){
+        const card_id = e.dataTransfer.getData("navbar");
         const card = document.getElementById(card_id);
         card.style.display = "block";
         e.target.appendChild(card);
@@ -32,14 +32,14 @@ const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
    
     <div 
     onDrop={drop}
-    className='w-screen bg-gray-200 border-5 p-2 min-h-[70vh]'
+    className='w-screen bg-gray-200 border-5  min-h-[70vh]'
     >   
    <div {...getRootProps()}>
       <input {...getInputProps()} />
       {
         isDragActive ?
           <p>Drop the template here ...</p> :
-          <p className='ml-5 mt-2 text-gray-200'></p>
+          <p className=' text-gray-200'>.</p>
       }
     </div>
     </div>
