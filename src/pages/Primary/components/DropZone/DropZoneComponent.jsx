@@ -12,8 +12,43 @@ function DropZoneComponent() {
         e.target.appendChild(card);
         console.log(card_id);
       }
+      if(e.dataTransfer.getData("nav")){
+        const card_id = e.dataTransfer.getData("nav");
+        const card = document.getElementById(card_id);
+        card.style.display = "block";
+        e.target.appendChild(card);
+        console.log(card_id);
+      }
       if(e.dataTransfer.getData("button")){
         const card_id = e.dataTransfer.getData("button");
+        const card = document.getElementById(card_id);
+        card.style.display = "block";
+        e.target.appendChild(card);
+        
+      }
+      if(e.dataTransfer.getData("cta")){
+        const card_id = e.dataTransfer.getData("cta");
+        const card = document.getElementById(card_id);
+        card.style.display = "block";
+        e.target.appendChild(card);
+        
+      }
+      if(e.dataTransfer.getData("image")){
+        const card_id = e.dataTransfer.getData("image");
+        const card = document.getElementById(card_id);
+        card.style.display = "block";
+        e.target.appendChild(card);
+        
+      }
+      if(e.dataTransfer.getData("card")){
+        const card_id = e.dataTransfer.getData("card");
+        const card = document.getElementById(card_id);
+        card.style.display = "block";
+        e.target.appendChild(card);
+        
+      }
+      if(e.dataTransfer.getData("footer")){
+        const card_id = e.dataTransfer.getData("footer");
         const card = document.getElementById(card_id);
         card.style.display = "block";
         e.target.appendChild(card);
@@ -32,7 +67,7 @@ const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
    
     <div 
     onDrop={drop}
-    className='w-screen bg-gray-200 border-5  min-h-[70vh]'
+    className='w-screen bg-gray-200 border-5  min-h-[70vh] overflow-y-auto h-screen'
     >   
    <div {...getRootProps()}>
       <input {...getInputProps()} />

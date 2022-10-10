@@ -1,5 +1,7 @@
 import React , {useRef, useEffect , useState} from 'react';
-
+import CtaComponent from './components/Cta/index'
+import Footer from './components/Footer/indxe';
+import Header from './components/Header/index';
 function template(props) {
   const componentText = document.querySelector("#component-text");
   const componentContainer = document.querySelector("#components_list");
@@ -44,7 +46,7 @@ function dragLeave(e) {
 
   return (
  <div> 
-<div className='overflow-y-auto h-96'>
+<div className='overflow-y-auto h-screen w-60'>
 <h1 id="component-text"  className="font-bold">Liste des components</h1>
 <ul id="components_list" className="my-4 grid grid-cols-1 gap-8">
 <div className='mt-5'>
@@ -55,7 +57,7 @@ onDragStart={dragStart}
 onDragEnter={dragEnter}
 onDragOver={dragOver}
 onDragLeave={dragLeave}
-id='button' 
+id='nav' 
 draggable='true'
 className='item'
 >
@@ -77,23 +79,21 @@ className='item'
             </div>     
           </nav>
 </div>
+
 <div
 onDragStart={dragStart}
 onDragEnter={dragEnter}
 onDragOver={dragOver}
 onDragLeave={dragLeave}
-id='button' 
+id='navbar' 
 draggable='true'
 className='item'
 >
-<nav class="py-3 px-4 bg-gray-600 flex flex-row " >
-            <button class="rounded-md px-4 py-3 bg-pink-600 text-white font-bold">
-              Commencer
-            </button>
+<nav class="py-3 px-4 bg-black flex flex-row " >
             <div>
-                <a href="#" class="text-white ml-60 pl-40" >Logo</a>
+                <a href="#" class="text-white ml-2 mt-2 text-3xl font-bold" >Logo</a>
             </div>
-            <div class="ml-2">
+            <div class="ml-36 pl-36">
                 <a href="#" class="text-white" >Contact</a>
             </div>
             <div class="ml-2">
@@ -101,11 +101,84 @@ className='item'
             </div>
             <div class="ml-2">
                 <a href="#" class="text-white" >A propos</a>
-            </div>     
-          </nav>
-</div> 
+            </div>
+            <button class="ml-24 rounded-md px-4 py-3 bg-pink-600 text-white font-bold">
+                Commencer
+              </button>     
+</nav>
+</div>
+<div className='mt-5'>
+<h2 className='font-bold  text-lg'>Tête de page</h2>
+</div>
+<div
+onDragStart={dragStart}
+onDragEnter={dragEnter}
+onDragOver={dragOver}
+onDragLeave={dragLeave}
+id='navbar' 
+draggable='true'
+className='item'
+>
+<nav class="py-3 px-4 bg-black flex flex-row " >
+            <div>
+                <a href="#" class="text-white ml-2 mt-2 text-3xl font-bold" >Logo</a>
+            </div>
+            <div class="ml-36 pl-36">
+                <a href="#" class="text-white" >Contact</a>
+            </div>
+            <div class="ml-2">
+                <a href="#" class="text-white" >Service</a>
+            </div>
+            <div class="ml-2">
+                <a href="#" class="text-white" >A propos</a>
+            </div>
+            <button class="ml-24 rounded-md px-4 py-3 bg-pink-600 text-white font-bold">
+                Commencer
+              </button>     
+</nav>
+</div>   
 </ul>
 
+<div
+onDragStart={dragStart}
+onDragEnter={dragEnter}
+onDragOver={dragOver}
+onDragLeave={dragLeave}
+id='cta' 
+draggable='true'
+className='item '
+>
+<CtaComponent></CtaComponent>
+</div>
+<div className='mt-5'>
+<h2 className='font-bold  text-lg'>Contenue</h2>
+</div>
+
+<div
+onDragStart={dragStart}
+onDragEnter={dragEnter}
+onDragOver={dragOver}
+onDragLeave={dragLeave}
+id='card' 
+draggable='true'
+className='item '
+>
+<Header></Header>
+</div>
+<div className='mt-5'>
+<h2 className='font-bold  text-lg'>Pied du page</h2>
+</div>
+<div
+onDragStart={dragStart}
+onDragEnter={dragEnter}
+onDragOver={dragOver}
+onDragLeave={dragLeave}
+id='footer' 
+draggable='true'
+className='item '
+>
+<Footer></Footer>
+</div>
  </div>
  </div>
   )

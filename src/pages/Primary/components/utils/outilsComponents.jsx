@@ -81,7 +81,16 @@ className='w-24 h-8 bg-slate-500'
             
             <div className='mt-5'>
             <input type="file" multiple accept='image/*' onChange={onImageChange} className='mt-2  cursor-pointer' id='fileInputFile' />
-            {imageURLs.map(imageSrc => <img src={imageSrc} draggable='true'/> )}
+            {imageURLs.map(imageSrc => <img 
+            src={imageSrc} 
+draggable='true'
+onDragStart={dragStart}
+onDragEnter={dragEnter}
+onDragOver={dragOver}
+onDragLeave={dragLeave}
+id='image' 
+
+            /> )}
             </div>
             
           </div>
